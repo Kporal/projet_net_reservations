@@ -21,6 +21,7 @@ CREATE TABLE [dbo].[cmd_vols](
 	[vol_category] [varchar](50) NOT NULL,
 	[vol_dateStart] [varchar](50) NOT NULL,
 	[vol_dateEnd] [varchar](50) NOT NULL,
+	[vol_price] [varchar] (50) NOT NULL,
  CONSTRAINT [PK_cmd_vols] PRIMARY KEY CLUSTERED ([idcmd_vols] ASC)
  WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF,
   ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]) ON [PRIMARY]
