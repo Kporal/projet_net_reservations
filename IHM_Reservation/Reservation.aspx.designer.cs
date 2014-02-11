@@ -49,6 +49,15 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.Calendar cal_dateStart;
         
         /// <summary>
+        /// Contrôle cal_dateEnd.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar cal_dateEnd;
+        
+        /// <summary>
         /// Contrôle btn_rechercher.
         /// </summary>
         /// <remarks>
