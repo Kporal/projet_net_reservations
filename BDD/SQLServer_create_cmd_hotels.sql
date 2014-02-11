@@ -15,6 +15,7 @@ CREATE TABLE [dbo].[cmd_hotels](
 	[client_city] [varchar](50) NOT NULL,
 	[client_country] [varchar](50) NOT NULL,
 	[hotel_stars] [varchar](50) NOT NULL,
+	[hotel_address] [varchar](50) NOT NULL,
 	[hotel_city] [varchar](50) NOT NULL,
 	[hotel_country] [varchar](50) NOT NULL,
 	[hotel_price] [varchar](50) NOT NULL,
