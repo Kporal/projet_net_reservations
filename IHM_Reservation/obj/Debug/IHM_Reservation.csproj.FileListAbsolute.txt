@@ -4,3 +4,9 @@ C:\Users\France\Documents\Etudes\Mines Nantes\FIL A2\workspace\ProjetNet\projet_
 C:\Users\France\Documents\Etudes\Mines Nantes\FIL A2\workspace\ProjetNet\projet_net_reservations\IHM_Reservation\obj\Debug\IHM_Reservation.csprojResolveAssemblyReference.cache
 C:\Users\France\Documents\Etudes\Mines Nantes\FIL A2\workspace\ProjetNet\projet_net_reservations\IHM_Reservation\obj\Debug\IHM_Reservation.dll
 C:\Users\France\Documents\Etudes\Mines Nantes\FIL A2\workspace\ProjetNet\projet_net_reservations\IHM_Reservation\obj\Debug\IHM_Reservation.pdb
+D:\Developpement\Microsoft .Net\ProjetResa\IHM_Reservation\bin\IHM_Reservation.dll.config
+D:\Developpement\Microsoft .Net\ProjetResa\IHM_Reservation\bin\IHM_Reservation.dll
+D:\Developpement\Microsoft .Net\ProjetResa\IHM_Reservation\bin\IHM_Reservation.pdb
+D:\Developpement\Microsoft .Net\ProjetResa\IHM_Reservation\obj\Debug\IHM_Reservation.csprojResolveAssemblyReference.cache
+D:\Developpement\Microsoft .Net\ProjetResa\IHM_Reservation\obj\Debug\IHM_Reservation.dll
+D:\Developpement\Microsoft .Net\ProjetResa\IHM_Reservation\obj\Debug\IHM_Reservation.pdb
