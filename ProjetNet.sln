@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libReservation", "libReserv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHM_Reservation", "IHM_Reservation\IHM_Reservation.csproj", "{F64D54C1-BBAF-462C-9466-BD84886826AE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReservationServices", "ReservationServices", "{8F3C5E0A-A0EC-4C00-8505-862C57721F64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationServices", "ReservationServices\ReservationServices.csproj", "{B767AAB8-F344-4EF7-B795-294CA2E4347B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{F64D54C1-BBAF-462C-9466-BD84886826AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F64D54C1-BBAF-462C-9466-BD84886826AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F64D54C1-BBAF-462C-9466-BD84886826AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B767AAB8-F344-4EF7-B795-294CA2E4347B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B767AAB8-F344-4EF7-B795-294CA2E4347B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B767AAB8-F344-4EF7-B795-294CA2E4347B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B767AAB8-F344-4EF7-B795-294CA2E4347B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +56,6 @@ Global
 		{3B5912F3-83C5-4641-BC82-6A16C69F7520} = {03759364-441F-4B75-86BF-DB7B64D30821}
 		{18120596-B43E-49B7-9505-1728161603FE} = {1DF8968D-30E2-46CD-84E3-2B960B6A5C57}
 		{F64D54C1-BBAF-462C-9466-BD84886826AE} = {D3B4ACA5-9839-4798-8BCE-62411F8E3345}
+		{B767AAB8-F344-4EF7-B795-294CA2E4347B} = {8F3C5E0A-A0EC-4C00-8505-862C57721F64}
 	EndGlobalSection
 EndGlobal
