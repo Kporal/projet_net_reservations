@@ -4,85 +4,156 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <!-- Bootstrap-->
     <link href="Content/bootstrap.min.css" rel="stylesheet">
     <script src="Scripts/bootstrap.min.js"></script>
+    <!-- /Bootstrap-->
     <title></title>
 </head>
 <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Reservation hotel</a>
+          </div>
+        </div><!--/.container-fluid -->
+      </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Reservez votre voyage</h1>
+          <br />
+        <p> Pour réserver votre voyage, vous devez : <br />
+            <ol>
+                <li>Sélectionner des informations générales sur le voyage que vous souhaitez effectuer</li>
+                <li>Choisir un vol correspondant à votre voyage</li>
+                <li>Choisir un hôtel</li>
+                <li>Entrer vos informations personnelles</li>
+                <li>Payer</li>
+            </ol>
+        </p>
+      <br />
+
+
     <form id="form1" runat="server">
+
+    <!-- ----------- -->
+    <!-- Réservation -->
+    <!-- ----------- -->
     <div>
-    
         <h1>Réservation : </h1>
-        Ville de départ :<br />
+        <div class="row">
+            <br />
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Ville de départ :</label>
+                    <asp:DropDownList ID="dpdl_villeDep" runat="server" >
+                        <asp:ListItem>Paris, France</asp:ListItem>
+                        <asp:ListItem>London, UK</asp:ListItem>
+                        <asp:ListItem>Berlin, Allemagne</asp:ListItem>
+                        <asp:ListItem>Rome, Italie</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label>Ville d&#39;arrivée :</label>
+                        <asp:DropDownList ID="dpdl_villeArr" runat="server">
+                            <asp:ListItem>Paris, France</asp:ListItem>
+                            <asp:ListItem>London, UK</asp:ListItem>
+                            <asp:ListItem>Berlin, Allemagne</asp:ListItem>
+                            <asp:ListItem>Rome, Italie</asp:ListItem>
+                        </asp:DropDownList>
+                 </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Date de départ :</label>
+                     <asp:Calendar ID="cal_dateStart" runat="server" BackColor="White" BorderColor="#3366CC" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest">
+                        <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+                        <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#009999" ForeColor="#CCFF99" Font-Bold="True" />
+                         <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                        <TitleStyle BackColor="#003399" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" BorderColor="#3366CC" BorderWidth="1px" Height="25px" />
+                        <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+                         <WeekendDayStyle BackColor="#CCCCFF" />
+                    </asp:Calendar>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Date de fin :</label>
+                    <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest">
+                        <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+                        <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
+                        <OtherMonthDayStyle ForeColor="#999999" />
+                        <SelectedDayStyle BackColor="#009999" ForeColor="#CCFF99" Font-Bold="True" />
+                        <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                        <TitleStyle BackColor="#003399" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" BorderColor="#3366CC" BorderWidth="1px" Height="25px" />
+                        <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+                        <WeekendDayStyle BackColor="#CCCCFF" />
+                    </asp:Calendar>
+                </div>    
+            </div>
+        </div>
+        
         <br />
-        <asp:DropDownList ID="dpdl_villeDep" runat="server" >
-            <asp:ListItem>Paris, France</asp:ListItem>
-            <asp:ListItem>London, UK</asp:ListItem>
-            <asp:ListItem>Berlin, Allemagne</asp:ListItem>
-            <asp:ListItem>Rome, Italie</asp:ListItem>
-        </asp:DropDownList>
-        <br />
-        <br />
-        Ville d&#39;arrivée :<br />
-        <br />
-        <asp:DropDownList ID="dpdl_villeArr" runat="server">
-            <asp:ListItem>Paris, France</asp:ListItem>
-            <asp:ListItem>London, UK</asp:ListItem>
-            <asp:ListItem>Berlin, Allemagne</asp:ListItem>
-            <asp:ListItem>Rome, Italie</asp:ListItem>
-        </asp:DropDownList>
-        <br />
-        <br />
-        Date de départ :<br />
-        <asp:Calendar ID="cal_dateStart" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="400px">
-            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
-            <DayStyle Width="14%" />
-            <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-            <OtherMonthDayStyle ForeColor="#999999" />
-            <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
-            <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
-            <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
-            <TodayDayStyle BackColor="#CCCC99" />
-        </asp:Calendar>
-        <br />
-        Date de fin :<br />
-        <asp:Calendar ID="cal_dateEnd" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" NextPrevFormat="FullMonth" TitleFormat="Month" Width="400px">
-            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
-            <DayStyle Width="14%" />
-            <NextPrevStyle Font-Size="8pt" ForeColor="White" />
-            <OtherMonthDayStyle ForeColor="#999999" />
-            <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
-            <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
-            <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
-            <TodayDayStyle BackColor="#CCCC99" />
-        </asp:Calendar>
-        <br />
-        <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btn_rechercher" runat="server" Text="Rechercher" />
         <br />
+        <br />
         </div>
+
+        <!-- --- -->
+        <!-- Vol -->
+        <!-- --- -->
         <div>
             <h1> Vol(s) disponible(s) :</h1>
             <br />
-            <asp:DropDownList ID="dpdl_volDispo" runat="server">
-                <asp:ListItem>Vol Air France AZ345 : Paris - Londres</asp:ListItem>
-            </asp:DropDownList>
-            <br />
-            <br />
-            Prix :<asp:Label ID="lbl_vol_price" runat="server" Text="Label"></asp:Label>
-            <br />
-            De :<asp:Label ID="lbl_vol_from" runat="server" Text="Label"></asp:Label>
-            <br />
-            Vers :<asp:Label ID="lbl_vol_to" runat="server" Text="Label"></asp:Label>
-            <br />
-            Categorie :<asp:Label ID="lbl_vol_category" runat="server" Text="Label"></asp:Label>
-            <br />
-            Date Départ :<asp:Label ID="lbl_vol_dateStart" runat="server" Text="Label"></asp:Label>
-            <br />
-            Date Arrivée :<asp:Label ID="lbl_vol_dateEnd" runat="server" Text="Label"></asp:Label>
-             <br />
+            <div class="form-group">
+                <label>Choix de vol(s) :</label>
+                <asp:DropDownList ID="dpdl_volDispo" runat="server">
+                    <asp:ListItem>Vol Air France AZ345 : Paris - Londres</asp:ListItem>
+                </asp:DropDownList>
+             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>De :</label>
+                        <asp:Label ID="lbl_vol_from" runat="server" Text="Label"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                        <label>Date Départ  :</label>
+                        <asp:Label ID="lbl_vol_dateStart" runat="server" Text="Label"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                        <label>Prix :</label>
+                        <asp:Label ID="lbl_vol_price" runat="server" Text="Label"></asp:Label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Vers :</label>
+                        <asp:Label ID="lbl_vol_to" runat="server" Text="Label"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                        <label>Date Arrivée :</label>
+                        <asp:Label ID="lbl_vol_dateEnd" runat="server" Text="Label"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                        <label>Categorie :</label>
+                        <asp:Label ID="lbl_vol_category" runat="server" Text="Label"></asp:Label>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- ----- -->
+        <!-- Hôtel -->
+        <!-- ----- -->
         <div>
             <h1>Hotel(s) :</h1>
             <asp:DropDownList ID="dpdl_hotelDispo" runat="server">
@@ -90,25 +161,71 @@
             </asp:DropDownList>
             <br />
             <br />
-            Localisation :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lbl_hotel_city" runat="server" Text="City"></asp:Label>
+            Localisation : <asp:Label ID="lbl_hotel_city" runat="server" Text="City"></asp:Label>
             ,
             <asp:Label ID="lbl_hotel_country" runat="server" Text="Country"></asp:Label>
             <br />
-            Prix :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lbl_hotel_price" runat="server" Text="Price"></asp:Label>
+            Prix : <asp:Label ID="lbl_hotel_price" runat="server" Text="Price"></asp:Label>
             <br />
-            Etoile(s) :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <asp:Label ID="lbl_hotel_stars" runat="server" Text="Etoile"></asp:Label>
+            Etoile(s) : <asp:Label ID="lbl_hotel_stars" runat="server" Text="Etoile"></asp:Label>
             <br />
-            Date Arrivée :&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lbl_hotel_dateStart" runat="server" Text="DateStart"></asp:Label>
+            Date Arrivée : <asp:Label ID="lbl_hotel_dateStart" runat="server" Text="DateStart"></asp:Label>
             <br />
-            Date Départ :&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lbl_hotel_dateEnd" runat="server" Text="DateEnd"></asp:Label>
+            Date Départ : <asp:Label ID="lbl_hotel_dateEnd" runat="server" Text="DateEnd"></asp:Label>
             <br />
+        </div>
+
+        <div>
+            <h1>Coordonnées :</h1>
+            <br />
+                <div class="form-group">
+                    <label>Nom :</label>
+                    <asp:TextBox class="form-control" ID="txt_clientName" runat="server"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label>Prénom :</label>
+                    <asp:TextBox class="form-control" ID="txt_clientFirstname" runat="server"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label>Adresse :</label>
+                    <asp:TextBox class="form-control" ID="txt_clientAddress" runat="server"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label> Code Postal :</label>
+                    <asp:TextBox class="form-control" ID="txt_clientPostalCode" runat="server"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label> Ville :</label>
+                    <asp:TextBox class="form-control" ID="txt_clientCity" runat="server"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label> Pays :</label>
+                    <asp:TextBox class="form-control" ID="txt_clientPays" runat="server"></asp:TextBox>
+                </div>
         </div>
         <br />
         <asp:Button ID="btn_valider_voyage" runat="server" OnClick="btn_valider_voyage_Click" Text="Valider Voyage" />
+
+    <!-- --------- -->
+    <!-- Validator -->
+    <!-- --------- -->
+
+    <!-- NomClient-->
+    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientName" Display="dynamic" ErrorMessage="Vous devez saisir un nom pour le client" />
+    <asp:CompareValidator runat="server" ControlToValidate="txt_clientName" Type="String" Operator="DataTypeCheck" 
+	ErrorMessage="Veuillez saisir un entier" Display="Dynamic" />
+    <!-- PrenomClient-->
+    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientFirstname" Display="dynamic" ErrorMessage="Veuillez saisir un prénom pour le client" />
+    <!-- CodePostalClient-->
+    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientPostalCode" Display="dynamic" ErrorMessage="Veuillez saisir un code postal pour le client" />
+    <asp:RegularExpressionValidator runat="server" ControlToValidate="txt_clientPostalCode" ErrorMessage="Le code postal saisi n'est pas correct" Display="dynamic"
+	ValidationExpression="([0-9]{5})" />
+    <!-- VilleClient-->
+    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientCity" Display="dynamic" ErrorMessage="Veuillez saisir une ville pour le client" />
+    <!-- PaysClient-->
+    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientPays" Display="dynamic" ErrorMessage="Veuillez saisir un pays pour le client" />
     </form>
+          </div>
+    </div> <!-- /container -->
 </body>
 </html>

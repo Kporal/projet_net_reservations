@@ -49,13 +49,13 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.Calendar cal_dateStart;
         
         /// <summary>
-        /// Contrôle cal_dateEnd.
+        /// Contrôle Calendar1.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar cal_dateEnd;
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
         /// Contrôle btn_rechercher.
@@ -76,15 +76,6 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.DropDownList dpdl_volDispo;
         
         /// <summary>
-        /// Contrôle lbl_vol_price.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_vol_price;
-        
-        /// <summary>
         /// Contrôle lbl_vol_from.
         /// </summary>
         /// <remarks>
@@ -92,24 +83,6 @@ namespace IHM_Reservation {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_vol_from;
-        
-        /// <summary>
-        /// Contrôle lbl_vol_to.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_vol_to;
-        
-        /// <summary>
-        /// Contrôle lbl_vol_category.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_vol_category;
         
         /// <summary>
         /// Contrôle lbl_vol_dateStart.
@@ -121,6 +94,24 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.Label lbl_vol_dateStart;
         
         /// <summary>
+        /// Contrôle lbl_vol_price.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_vol_price;
+        
+        /// <summary>
+        /// Contrôle lbl_vol_to.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_vol_to;
+        
+        /// <summary>
         /// Contrôle lbl_vol_dateEnd.
         /// </summary>
         /// <remarks>
@@ -128,6 +119,15 @@ namespace IHM_Reservation {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_vol_dateEnd;
+        
+        /// <summary>
+        /// Contrôle lbl_vol_category.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_vol_category;
         
         /// <summary>
         /// Contrôle dpdl_hotelDispo.
@@ -191,6 +191,60 @@ namespace IHM_Reservation {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_hotel_dateEnd;
+        
+        /// <summary>
+        /// Contrôle txt_clientName.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_clientName;
+        
+        /// <summary>
+        /// Contrôle txt_clientFirstname.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_clientFirstname;
+        
+        /// <summary>
+        /// Contrôle txt_clientAddress.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_clientAddress;
+        
+        /// <summary>
+        /// Contrôle txt_clientPostalCode.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_clientPostalCode;
+        
+        /// <summary>
+        /// Contrôle txt_clientCity.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_clientCity;
+        
+        /// <summary>
+        /// Contrôle txt_clientPays.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_clientPays;
         
         /// <summary>
         /// Contrôle btn_valider_voyage.
