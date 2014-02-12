@@ -211,13 +211,13 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.TextBox txt_clientName;
         
         /// <summary>
-        /// Contrôle txt_clientFirstname.
+        /// Contrôle txt_clientPhone.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_clientFirstname;
+        protected global::System.Web.UI.WebControls.TextBox txt_clientPhone;
         
         /// <summary>
         /// Contrôle txt_clientAddress.
@@ -229,15 +229,6 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.TextBox txt_clientAddress;
         
         /// <summary>
-        /// Contrôle txt_clientPostalCode.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_clientPostalCode;
-        
-        /// <summary>
         /// Contrôle txt_clientCity.
         /// </summary>
         /// <remarks>
@@ -245,6 +236,33 @@ namespace IHM_Reservation {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_clientCity;
+        
+        /// <summary>
+        /// Contrôle txt_clientFirstname.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_clientFirstname;
+        
+        /// <summary>
+        /// Contrôle txt_clientMail.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_clientMail;
+        
+        /// <summary>
+        /// Contrôle txt_clientPostalCode.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_clientPostalCode;
         
         /// <summary>
         /// Contrôle txt_clientPays.

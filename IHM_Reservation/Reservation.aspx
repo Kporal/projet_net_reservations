@@ -29,10 +29,10 @@
           <br />
         <p> Pour réserver votre voyage, vous devez : <br />
             <ol>
-                <li>Sélectionner des informations générales sur le voyage que vous souhaitez effectuer</li>
-                <li>Choisir un vol correspondant à votre voyage</li>
-                <li>Choisir un hôtel</li>
-                <li>Entrer vos informations personnelles</li>
+                <li>Sélectionner des informations générales sur le voyage que vous souhaitez effectuer (Partie réservation)</li>
+                <li>Choisir un vol correspondant à votre voyage (partie Vol(s) Disponible(s))</li>
+                <li>Choisir un hôtel (partie Hôtel(s))</li>
+                <li>Entrer vos informations personnelles (partie Coordonnées)</li>
                 <li>Payer</li>
             </ol>
         </p>
@@ -199,29 +199,43 @@
         <div>
             <h1>Coordonnées :</h1>
             <br />
-                <div class="form-group">
-                    <label>Nom :</label>
-                    <asp:TextBox class="form-control" ID="txt_clientName" runat="server"></asp:TextBox>
-                </div>
-                <div class="form-group">
-                    <label>Prénom :</label>
-                    <asp:TextBox class="form-control" ID="txt_clientFirstname" runat="server"></asp:TextBox>
-                </div>
-                <div class="form-group">
-                    <label>Adresse :</label>
-                    <asp:TextBox class="form-control" ID="txt_clientAddress" runat="server"></asp:TextBox>
-                </div>
-                <div class="form-group">
-                    <label> Code Postal :</label>
-                    <asp:TextBox class="form-control" ID="txt_clientPostalCode" runat="server"></asp:TextBox>
-                </div>
-                <div class="form-group">
-                    <label> Ville :</label>
-                    <asp:TextBox class="form-control" ID="txt_clientCity" runat="server"></asp:TextBox>
-                </div>
-                <div class="form-group">
-                    <label> Pays :</label>
-                    <asp:TextBox class="form-control" ID="txt_clientPays" runat="server"></asp:TextBox>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Nom :</label>
+                            <asp:TextBox class="form-control" ID="txt_clientName" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label>Téléphone :</label>
+                            <asp:TextBox class="form-control" ID="txt_clientPhone" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label>Adresse :</label>
+                            <asp:TextBox class="form-control" ID="txt_clientAddress" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label> Ville :</label>
+                            <asp:TextBox class="form-control" ID="txt_clientCity" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Prénom :</label>
+                            <asp:TextBox class="form-control" ID="txt_clientFirstname" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label>E-Mail :</label>
+                            <asp:TextBox class="form-control" ID="txt_clientMail" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label> Code Postal :</label>
+                            <asp:TextBox class="form-control" ID="txt_clientPostalCode" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label> Pays :</label>
+                            <asp:TextBox class="form-control" ID="txt_clientPays" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
                 </div>
         </div>
         <br />
