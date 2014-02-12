@@ -3,6 +3,8 @@ GO
 CREATE PROCEDURE dbo.insertCmdHotels
 		@FirstName varchar(50),
 		@LastName varchar(50), 
+		@Phone varchar(50),
+		@Mail varchar(50),
 		@Address varchar(50),
 		@PostalCode varchar(50),
 		@City varchar(50),
