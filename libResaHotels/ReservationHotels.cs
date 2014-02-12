@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.EnterpriseServices;
-using System.Linq;
-using System.Text;
 
 namespace ProjetNet.Reservation.ReservationDAL.libResaHotels
 {
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(), System.EnterpriseServices.Description("Reservation Hotel")]
-    public partial class ReservationHotels : ServicedComponent
+    public class ReservationHotels : ServicedComponent
     {
         public ReservationHotels()
         {
@@ -21,10 +16,11 @@ namespace ProjetNet.Reservation.ReservationDAL.libResaHotels
         public void ReservationHotel(string FirstName, string LastName, string Address, string PostalCode, string City, string Country, string Stars, string CityHotel, string CountryHotel, string Price, string dateStart, string dateEnd){
         
             SqlConnection MyC = new SqlConnection();
-            MyC.ConnectionString = "Data Source=PCRANGERS; Initial Catalog=cmd_hotels; Integrated Security = true";
+            MyC.ConnectionString = "Data Source=(local); Initial Catalog=cmd_hotels; Integrated Security = true";
             MyC.Open();
             SqlCommand MyCom = new SqlCommand("insertCmdHotels", MyC);
             MyCom.CommandType = CommandType.StoredProcedure;
+          
             // Client
             MyCom.Parameters.Add("@FirstName", SqlDbType.VarChar);
             MyCom.Parameters["@FirstName"].Value = FirstName;
@@ -56,7 +52,6 @@ namespace ProjetNet.Reservation.ReservationDAL.libResaHotels
             int Res = Convert.ToInt32 (MyCom.ExecuteScalar());
             MyCom.Dispose();
             MyC.Close();
-
         }
     }
 }
