@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Reservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libResaHotels\libResaHotels.csproj">
+      <Project>{289a6e3d-ca97-4488-9870-9a5ade61ce1f}</Project>
+      <Name>libResaHotels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libResaVols\libResaVols.csproj">
+      <Project>{3b5912f3-83c5-4641-bc82-6a16c69f7520}</Project>
+      <Name>libResaVols</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,7 +17,7 @@ namespace ProjetNet.Reservation.ReservationDAL.libResaVols
         }
 
         [AutoComplete]
-        public void ReservationHotel(string FirstName, string LastName, string Address, string PostalCode, string City, string Country, string Stars, string CityHotel, string CountryHotel, string Price, string dateStart, string dateEnd)
+        public void ReservationHotel(string FirstName, string LastName, string Address, string PostalCode, string City, string Country, string VolName, string VolFrom, string VolTo, string VolCategory, string Price, string dateStart, string dateEnd)
         {
 
             SqlConnection MyC = new SqlConnection();
@@ -42,19 +42,19 @@ namespace ProjetNet.Reservation.ReservationDAL.libResaVols
 
             // Vols
             MyCom.Parameters.Add("@Vols_name", SqlDbType.VarChar);
-            MyCom.Parameters["@Hotels_name"].Value = Stars;
-            MyCom.Parameters.Add("@Hotels_from", SqlDbType.VarChar);
-            MyCom.Parameters["@Hotels_from"].Value = CityHotel;
-            MyCom.Parameters.Add("@Hotels_to", SqlDbType.VarChar);
-            MyCom.Parameters["@Hotels_to"].Value = CountryHotel;
-            MyCom.Parameters.Add("@Hotels_category", SqlDbType.VarChar);
-            MyCom.Parameters["@Hotels_category"].Value = Price;
-            MyCom.Parameters.Add("@Hotels_DateStart", SqlDbType.VarChar);
-            MyCom.Parameters["@Hotels_DateStart"].Value = dateStart;
-            MyCom.Parameters.Add("@Hotels_DateEnd", SqlDbType.VarChar);
-            MyCom.Parameters["@Hotels_DateEnd"].Value = dateStart;
-            MyCom.Parameters.Add("@Hotels_Price", SqlDbType.VarChar);
-            MyCom.Parameters["@Hotels_Price"].Value = dateStart;
+            MyCom.Parameters["@Vols_name"].Value = VolName;
+            MyCom.Parameters.Add("@Vols_from", SqlDbType.VarChar);
+            MyCom.Parameters["@Vols_from"].Value = VolFrom;
+            MyCom.Parameters.Add("@Vols_to", SqlDbType.VarChar);
+            MyCom.Parameters["@Vols_to"].Value = VolTo;
+            MyCom.Parameters.Add("@Vols_category", SqlDbType.VarChar);
+            MyCom.Parameters["@Vols_category"].Value = VolCategory;
+            MyCom.Parameters.Add("@Vols_DateStart", SqlDbType.VarChar);
+            MyCom.Parameters["@Vols_DateStart"].Value = dateStart;
+            MyCom.Parameters.Add("@Vols_DateEnd", SqlDbType.VarChar);
+            MyCom.Parameters["@Vols_DateEnd"].Value = dateEnd;
+            MyCom.Parameters.Add("@Vols_Price", SqlDbType.VarChar);
+            MyCom.Parameters["@Vols_Price"].Value = Price;
 
             int Res = Convert.ToInt32(MyCom.ExecuteScalar());
             MyCom.Dispose();
