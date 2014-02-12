@@ -114,7 +114,7 @@
             <h1> Vol(s) disponible(s) :</h1>
             <br />
             <div class="form-group">
-                <label>Choix de vol(s) :</label>
+                <label>Choix de votre vol :</label>
                 <asp:DropDownList ID="dpdl_volDispo" runat="server">
                     <asp:ListItem>Vol Air France AZ345 : Paris - Londres</asp:ListItem>
                 </asp:DropDownList>
@@ -156,23 +156,44 @@
         <!-- ----- -->
         <div>
             <h1>Hotel(s) :</h1>
-            <asp:DropDownList ID="dpdl_hotelDispo" runat="server">
-                <asp:ListItem>Hotel 3 étoiles Le Fritz</asp:ListItem>
-            </asp:DropDownList>
             <br />
-            <br />
-            Localisation : <asp:Label ID="lbl_hotel_city" runat="server" Text="City"></asp:Label>
-            ,
-            <asp:Label ID="lbl_hotel_country" runat="server" Text="Country"></asp:Label>
-            <br />
-            Prix : <asp:Label ID="lbl_hotel_price" runat="server" Text="Price"></asp:Label>
-            <br />
-            Etoile(s) : <asp:Label ID="lbl_hotel_stars" runat="server" Text="Etoile"></asp:Label>
-            <br />
-            Date Arrivée : <asp:Label ID="lbl_hotel_dateStart" runat="server" Text="DateStart"></asp:Label>
-            <br />
-            Date Départ : <asp:Label ID="lbl_hotel_dateEnd" runat="server" Text="DateEnd"></asp:Label>
-            <br />
+            
+            <div class="form-group">
+                <label>Choix de votre hôtel :</label>
+                <asp:DropDownList ID="dpdl_hotelDispo" runat="server">
+                    <asp:ListItem>Hotel 3 étoiles Le Fritz</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <label>Localisation :</label>
+                    <asp:Label ID="lbl_hotel_address" runat="server" Text="Address"></asp:Label>,
+                    <asp:Label ID="lbl_hotel_city" runat="server" Text="City"></asp:Label>,
+                    <asp:Label ID="lbl_hotel_country" runat="server" Text="Country"></asp:Label>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Prix : </label>
+                        <asp:Label ID="lbl_hotel_price" runat="server" Text="Price"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                        <label>Date Debut :</label>
+                        <asp:Label ID="lbl_hotel_dateStart" runat="server" Text="DateStart"></asp:Label>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    
+                    <div class="form-group">
+                        <label>Etoile(s) :</label>
+                        <asp:Label ID="lbl_hotel_stars" runat="server" Text="Etoile"></asp:Label>
+                    </div>
+                    <div class="form-group">
+                        <label>Date Fin :</label>
+                        <asp:Label ID="lbl_hotel_dateEnd" runat="server" Text="DateEnd"></asp:Label>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div>
@@ -211,19 +232,25 @@
     <!-- --------- -->
 
     <!-- NomClient-->
-    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientName" Display="dynamic" ErrorMessage="Vous devez saisir un nom pour le client" />
+    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientName" Display="dynamic" ErrorMessage="Veuillez saisir le nom du client" />
     <asp:CompareValidator runat="server" ControlToValidate="txt_clientName" Type="String" Operator="DataTypeCheck" 
-	ErrorMessage="Veuillez saisir un entier" Display="Dynamic" />
+	ErrorMessage="Veuillez saisir le nom du client" Display="Dynamic" />
     <!-- PrenomClient-->
-    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientFirstname" Display="dynamic" ErrorMessage="Veuillez saisir un prénom pour le client" />
+    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientFirstname" Display="dynamic" ErrorMessage="Veuillez saisir le prénom du client" />
+        <asp:CompareValidator runat="server" ControlToValidate="txt_clientFirstname" Type="String" Operator="DataTypeCheck" 
+	ErrorMessage="Veuillez saisir le prénom du client" Display="Dynamic" />
     <!-- CodePostalClient-->
     <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientPostalCode" Display="dynamic" ErrorMessage="Veuillez saisir un code postal pour le client" />
     <asp:RegularExpressionValidator runat="server" ControlToValidate="txt_clientPostalCode" ErrorMessage="Le code postal saisi n'est pas correct" Display="dynamic"
 	ValidationExpression="([0-9]{5})" />
     <!-- VilleClient-->
-    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientCity" Display="dynamic" ErrorMessage="Veuillez saisir une ville pour le client" />
+    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientCity" Display="dynamic" ErrorMessage="Veuillez saisir la ville de résidence du client" />
+    <asp:CompareValidator runat="server" ControlToValidate="txt_clientCity" Type="String" Operator="DataTypeCheck" 
+	ErrorMessage="Veuillez saisir la ville de résidence du client" Display="Dynamic" />
     <!-- PaysClient-->
-    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientPays" Display="dynamic" ErrorMessage="Veuillez saisir un pays pour le client" />
+    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientPays" Display="dynamic" ErrorMessage="Veuillez saisir le pays de résidence du client" />
+    <asp:CompareValidator runat="server" ControlToValidate="txt_clientPays" Type="String" Operator="DataTypeCheck" 
+	ErrorMessage="Veuillez saisir le pays de résidence du client" Display="Dynamic" />
     </form>
           </div>
     </div> <!-- /container -->
