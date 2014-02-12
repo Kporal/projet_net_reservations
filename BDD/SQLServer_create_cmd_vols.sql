@@ -11,6 +11,8 @@ CREATE TABLE [dbo].[cmd_vols](
 	[idcmd_vols] [int] IDENTITY(1, 1) NOT NULL,
 	[client_firstname] [varchar](50) NOT NULL,
 	[client_lastname] [varchar](50) NOT NULL,
+	[client_phone] [varchar](20) NOT NULL,
+	[client_mail] [varchar] (50) NOT NULL,
 	[client_address] [varchar](50) NOT NULL,
 	[client_postal_code] [varchar](50) NOT NULL,
 	[client_city] [varchar](50) NOT NULL,
