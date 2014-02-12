@@ -22,40 +22,40 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Contrôle DropDownList1.
+        /// Contrôle dpdl_villeDep.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList dpdl_villeDep;
         
         /// <summary>
-        /// Contrôle DropDownList2.
+        /// Contrôle dpdl_villeArr.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList dpdl_villeArr;
         
         /// <summary>
-        /// Contrôle Calendar1.
+        /// Contrôle cal_dateStart.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.Calendar cal_dateStart;
         
         /// <summary>
-        /// Contrôle DropDownList3.
+        /// Contrôle cal_dateEnd.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.Calendar cal_dateEnd;
         
         /// <summary>
         /// Contrôle btn_rechercher.
@@ -67,13 +67,13 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.Button btn_rechercher;
         
         /// <summary>
-        /// Contrôle DropDownList4.
+        /// Contrôle dpdl_volDispo.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList dpdl_volDispo;
         
         /// <summary>
         /// Contrôle lbl_vol_price.
@@ -130,13 +130,13 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.Label lbl_vol_dateEnd;
         
         /// <summary>
-        /// Contrôle DropDownList5.
+        /// Contrôle dpdl_hotelDispo.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
+        protected global::System.Web.UI.WebControls.DropDownList dpdl_hotelDispo;
         
         /// <summary>
         /// Contrôle lbl_hotel_city.
