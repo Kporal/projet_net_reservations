@@ -14,7 +14,6 @@ namespace ProjetNet.Reservation.ReservationServices.ReservationServices
     [System.ComponentModel.ToolboxItem(false)]
     public class WebServiceReservation : System.Web.Services.WebService
     {
-
         [WebMethod]
         public void Reserver(string FirstName, string LastName, string Address, string PostalCode, string City, string Country, 
             string Stars, string CityHotel, string CountryHotel, string HotelPrice, string HotelDateStart, string HotelDateEnd,
