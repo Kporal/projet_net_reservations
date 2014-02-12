@@ -1,9 +1,0 @@
-C:\Users\France\Documents\Etudes\Mines Nantes\FIL A2\workspace\ProjetNet\projet_net_reservations\libResaHotels\bin\Debug\libResaHotels.dll
-C:\Users\France\Documents\Etudes\Mines Nantes\FIL A2\workspace\ProjetNet\projet_net_reservations\libResaHotels\bin\Debug\libResaHotels.pdb
-C:\Users\France\Documents\Etudes\Mines Nantes\FIL A2\workspace\ProjetNet\projet_net_reservations\libResaHotels\obj\Debug\libResaHotels.csprojResolveAssemblyReference.cache
-C:\Users\France\Documents\Etudes\Mines Nantes\FIL A2\workspace\ProjetNet\projet_net_reservations\libResaHotels\obj\Debug\libResaHotels.dll
-C:\Users\France\Documents\Etudes\Mines Nantes\FIL A2\workspace\ProjetNet\projet_net_reservations\libResaHotels\obj\Debug\libResaHotels.pdb
-D:\Developpement\Microsoft .Net\ProjetResa\libResaHotels\obj\Debug\libResaHotels.dll
-D:\Developpement\Microsoft .Net\ProjetResa\libResaHotels\obj\Debug\libResaHotels.pdb
-D:\Developpement\Microsoft .Net\ProjetResa\libResaHotels\bin\Debug\libResaHotels.dll
-D:\Developpement\Microsoft .Net\ProjetResa\libResaHotels\bin\Debug\libResaHotels.pdb
