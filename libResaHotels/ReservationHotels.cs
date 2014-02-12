@@ -16,7 +16,7 @@ namespace ProjetNet.Reservation.ReservationDAL.libResaHotels
         public void ReservationHotel(string FirstName, string LastName, string Address, string PostalCode, string City, string Country, string Stars, string CityHotel, string CountryHotel, string Price, string dateStart, string dateEnd){
         
             SqlConnection MyC = new SqlConnection();
-            MyC.ConnectionString = "Data Source=(local); Initial Catalog=cmd_hotels; Integrated Security = true";
+            MyC.ConnectionString = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=cmd_hotels; Integrated Security = true";
             MyC.Open();
             SqlCommand MyCom = new SqlCommand("insertCmdHotels", MyC);
             MyCom.CommandType = CommandType.StoredProcedure;

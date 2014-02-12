@@ -21,7 +21,7 @@ namespace ProjetNet.Reservation.ReservationDAL.libResaVols
         {
 
             SqlConnection MyC = new SqlConnection();
-            MyC.ConnectionString = "Data Source=(local); Initial Catalog=cmd_vols; Integrated Security = true";
+            MyC.ConnectionString = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=cmd_vols; Integrated Security = true";
             MyC.Open();
             SqlCommand MyCom = new SqlCommand("insertCmdVols", MyC);
             MyCom.CommandType = CommandType.StoredProcedure;
