@@ -18,7 +18,7 @@ namespace ProjetNet.DataAccessL.libResaVols
         }
 
         [AutoComplete]
-        public void ReservationHotel(ReservationHotelVol reservation)
+        public void ReservationVol(ReservationHotelVol reservation)
         {
             SqlConnection MyC = new SqlConnection();
             MyC.ConnectionString = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=cmd_vols; Integrated Security = true";
