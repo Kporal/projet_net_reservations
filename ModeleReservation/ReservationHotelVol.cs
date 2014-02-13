@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace ProjetNet.Modele.ModeleReservation
 {
+    /// <summary>
+    /// Reservation d'un hotel et d'un vol.
+    /// </summary>
     public class ReservationHotelVol
     {
+        /// <summary>
+        /// Client de la reservation.
+        /// </summary>
+        public Client Client { get; set; }
+
         /// <summary>
         /// Hotel de la reservation.
         /// </summary>
