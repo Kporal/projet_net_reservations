@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetNet.Reservation.ReservationDAL.libResaVols
+namespace ProjetNet.DataAccessL.libResaVols
 {
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(), System.EnterpriseServices.Description("Reservation Vols")]
     public class ReservationVols : ServicedComponent

@@ -1,8 +1,8 @@
-﻿using ProjetNet.Reservation.ReservationDAL.libResaHotels;
-using ProjetNet.Reservation.ReservationDAL.libResaVols;
+﻿using ProjetNet.DataAccessL.libResaHotels;
+using ProjetNet.DataAccessL.libResaVols;
 using System.EnterpriseServices;
 
-namespace ProjetNet.Reservation.ReservationBL.libReservation
+namespace ProjetNet.BusinessL.libReservation
 {
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(), Description("Reservation Hotel & Vol")] 
     public class Reservation : ServicedComponent

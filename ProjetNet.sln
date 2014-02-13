@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReservationDAL", "ReservationDAL", "{03759364-441F-4B75-86BF-DB7B64D30821}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessL", "DataAccessL", "{03759364-441F-4B75-86BF-DB7B64D30821}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReservationBL", "ReservationBL", "{1DF8968D-30E2-46CD-84E3-2B960B6A5C57}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessL", "BusinessL", "{1DF8968D-30E2-46CD-84E3-2B960B6A5C57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IHM", "IHM", "{D3B4ACA5-9839-4798-8BCE-62411F8E3345}"
 EndProject
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libReservation", "libReserv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHM_Reservation", "IHM_Reservation\IHM_Reservation.csproj", "{F64D54C1-BBAF-462C-9466-BD84886826AE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReservationServices", "ReservationServices", "{8F3C5E0A-A0EC-4C00-8505-862C57721F64}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8F3C5E0A-A0EC-4C00-8505-862C57721F64}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationServices", "ReservationServices\ReservationServices.csproj", "{B767AAB8-F344-4EF7-B795-294CA2E4347B}"
 EndProject

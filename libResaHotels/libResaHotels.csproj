@@ -7,7 +7,7 @@
     <ProjectGuid>{289A6E3D-CA97-4488-9870-9A5ADE61CE1F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjetNet.Reservation.ReservationDAL.libResaHotels</RootNamespace>
+    <RootNamespace>ProjetNet.DataAccessL.libResaHotels</RootNamespace>
     <AssemblyName>libResaHotels</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

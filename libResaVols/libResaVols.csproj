@@ -7,7 +7,7 @@
     <ProjectGuid>{3B5912F3-83C5-4641-BC82-6A16C69F7520}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjetNet.Reservation.ReservationDAL.libResaVols</RootNamespace>
+    <RootNamespace>ProjetNet.DataAccessL.libResaVols</RootNamespace>
     <AssemblyName>libResaVols</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

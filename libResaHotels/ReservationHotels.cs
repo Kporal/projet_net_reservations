@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.EnterpriseServices;
 
-namespace ProjetNet.Reservation.ReservationDAL.libResaHotels
+namespace ProjetNet.DataAccessL.libResaHotels
 {
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(), System.EnterpriseServices.Description("Reservation Hotel")]
     public class ReservationHotels : ServicedComponent

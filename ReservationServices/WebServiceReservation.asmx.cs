@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ProjetNet.BusinessL.libReservation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
 
-namespace ProjetNet.Reservation.ReservationServices.ReservationServices
+namespace ProjetNet.Services.ReservationServices
 {
     /// <summary>
     /// Service de reservation.
@@ -19,7 +20,7 @@ namespace ProjetNet.Reservation.ReservationServices.ReservationServices
             string Stars, string CityHotel, string CountryHotel, string HotelPrice, string HotelDateStart, string HotelDateEnd,
             string VolName, string VolFrom, string VolTo, string VolCategory, string VolPrice, string VolDateStart, string VolDateEnd)
         {
-            Reservation.ReservationBL.libReservation.Reservation resa = new ProjetNet.Reservation.ReservationBL.libReservation.Reservation();
+            Reservation resa = new Reservation();
             resa.DoReservation(FirstName, LastName, Address, PostalCode, City, Country, 
                 Stars, CityHotel, CountryHotel, HotelPrice, HotelDateStart, HotelDateEnd, 
                 VolName, VolFrom, VolTo, VolCategory, VolPrice, VolDateStart, VolDateEnd);
