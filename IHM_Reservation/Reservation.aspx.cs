@@ -44,8 +44,37 @@ namespace IHM_Reservation
 
         protected void btn_valider_voyage_Click(object sender, EventArgs e)
         {
-            
+            // info du vol
+            ProjetNet.Modele.ModeleReservation.Vol vol = new ProjetNet.Modele.ModeleReservation.Vol();
+            IHM_Reservation.WebServiceConsultation.Vol volSelected = this.vols[Convert.ToInt32(dpdl_volDispo.SelectedValue)];
+            vol.Name = volSelected.name;
+            vol.Price = Convert.ToDecimal(volSelected.price);
+            vol.Category = volSelected.category;
+            vol.From = this.destinations[Convert.ToInt32(volSelected.id_destination_from)].city;
+            vol.To = this.destinations[Convert.ToInt32(volSelected.id_destination_to)].city;
+
+            // info de l'hotel
+            ProjetNet.Modele.ModeleReservation.Hotel hotel = new ProjetNet.Modele.ModeleReservation.Hotel();
+            IHM_Reservation.WebServiceConsultation.Hotel hotelSelected = this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedValue)];
+            hotel.Stars = Convert.ToByte(hotelSelected.stars);
+            hotel.Price = hotel.Price;
+            hotel.City = this.destinations[Convert.ToInt32(hotelSelected.id_destination)].city;
+            hotel.Country = this.destinations[Convert.ToInt32(hotelSelected.id_destination)].country;
+
+            // infos du client
+            Client client = new Client();
+            client.FirstName = txt_clientFirstname.Text;
+            client.LastName = txt_clientName.Text;
+            client.Address = txt_clientAddress.Text;
+            client.PostalCode = txt_clientPostalCode.Text;
+            client.City = txt_clientCity.Text;
+            client.Country = txt_clientPays.Text;
+
+            // infos de la reservation
             ReservationHotelVol resa = new ReservationHotelVol();
+            resa.Client = client;
+            resa.Hotel = hotel;
+            resa.Vol = vol;
         }
 
         protected void btn_rechercher_Click(object sender, EventArgs e)
