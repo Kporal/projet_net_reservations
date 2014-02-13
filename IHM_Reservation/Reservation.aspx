@@ -102,7 +102,7 @@
         </div>
         
         <br />
-        <asp:Button ID="btn_rechercher" runat="server" Text="Rechercher" />
+        <asp:Button ID="btn_rechercher" runat="server" Text="Rechercher" OnClick="btn_rechercher_Click" />
         <br />
         <br />
         </div>

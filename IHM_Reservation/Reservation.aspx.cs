@@ -17,5 +17,10 @@ namespace IHM_Reservation
         {
 
         }
+
+        protected void btn_rechercher_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
