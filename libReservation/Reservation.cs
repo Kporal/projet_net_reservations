@@ -1,5 +1,6 @@
 ﻿using ProjetNet.DataAccessL.libResaHotels;
 using ProjetNet.DataAccessL.libResaVols;
+using ProjetNet.Modele.ModeleReservation;
 using System.EnterpriseServices;
 
 namespace ProjetNet.BusinessL.libReservation
@@ -12,17 +13,13 @@ namespace ProjetNet.BusinessL.libReservation
         }
 
         [AutoComplete ]
-        public void DoReservation(string FirstName, string LastName, string Address, string PostalCode, string City, string Country, 
-            string Stars, string CityHotel, string CountryHotel, string HotelPrice, string HotelDateStart, string HotelDateEnd,
-            string VolName, string VolFrom, string VolTo, string VolCategory, string VolPrice, string VolDateStart, string VolDateEnd)  
+        public void DoReservation(ReservationHotelVol reservation)  
         {
             ReservationHotels resaHotel = new ReservationHotels();
             ReservationVols resaVol = new ReservationVols();
 
-            resaHotel.ReservationHotel(FirstName, LastName, Address, PostalCode, City, Country, 
-                Stars, CityHotel, CountryHotel, HotelPrice, HotelDateStart, HotelDateEnd);
-            resaVol.ReservationHotel(FirstName, LastName, Address, PostalCode, City, Country, 
-                VolName, VolFrom, VolTo, VolCategory, VolPrice, VolDateStart, VolDateEnd);
+            resaHotel.ReservationHotel(reservation);
+            resaVol.ReservationHotel(reservation);
         }
     }
 }

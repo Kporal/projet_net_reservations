@@ -1,4 +1,5 @@
 ﻿using ProjetNet.BusinessL.libReservation;
+using ProjetNet.Modele.ModeleReservation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +17,10 @@ namespace ProjetNet.Services.ReservationServices
     public class WebServiceReservation : System.Web.Services.WebService
     {
         [WebMethod]
-        public void Reserver(string FirstName, string LastName, string Address, string PostalCode, string City, string Country, 
-            string Stars, string CityHotel, string CountryHotel, string HotelPrice, string HotelDateStart, string HotelDateEnd,
-            string VolName, string VolFrom, string VolTo, string VolCategory, string VolPrice, string VolDateStart, string VolDateEnd)
+        public void Reserver(ReservationHotelVol reservation)
         {
             Reservation resa = new Reservation();
-            resa.DoReservation(FirstName, LastName, Address, PostalCode, City, Country, 
-                Stars, CityHotel, CountryHotel, HotelPrice, HotelDateStart, HotelDateEnd, 
-                VolName, VolFrom, VolTo, VolCategory, VolPrice, VolDateStart, VolDateEnd);
+            resa.DoReservation(reservation);
         }
     }
 }

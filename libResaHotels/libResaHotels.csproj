@@ -53,6 +53,12 @@
   <ItemGroup>
     <None Include="libResaHotels.snk" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModeleReservation\ModeleReservation.csproj">
+      <Project>{2ba4eaa3-421b-4e2e-93ff-fd1cb1264364}</Project>
+      <Name>ModeleReservation</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

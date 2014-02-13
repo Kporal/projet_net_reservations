@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetNet.Modele.ModeleReservation;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -17,9 +18,8 @@ namespace ProjetNet.DataAccessL.libResaVols
         }
 
         [AutoComplete]
-        public void ReservationHotel(string FirstName, string LastName, string Address, string PostalCode, string City, string Country, string VolName, string VolFrom, string VolTo, string VolCategory, string Price, string dateStart, string dateEnd)
+        public void ReservationHotel(ReservationHotelVol reservation)
         {
-
             SqlConnection MyC = new SqlConnection();
             MyC.ConnectionString = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=cmd_vols; Integrated Security = true";
             MyC.Open();
@@ -28,33 +28,33 @@ namespace ProjetNet.DataAccessL.libResaVols
 
             // Client
             MyCom.Parameters.Add("@FirstName", SqlDbType.VarChar);
-            MyCom.Parameters["@FirstName"].Value = FirstName;
+            MyCom.Parameters["@FirstName"].Value = reservation.Client.FirstName;
             MyCom.Parameters.Add("@LastName", SqlDbType.VarChar);
-            MyCom.Parameters["@LastName"].Value = LastName;
+            MyCom.Parameters["@LastName"].Value = reservation.Client.LastName;
             MyCom.Parameters.Add("@Address", SqlDbType.VarChar);
-            MyCom.Parameters["@Address"].Value = Address;
+            MyCom.Parameters["@Address"].Value = reservation.Client.Address;
             MyCom.Parameters.Add("@PostalCode", SqlDbType.VarChar);
-            MyCom.Parameters["@PostalCode"].Value = PostalCode;
+            MyCom.Parameters["@PostalCode"].Value = reservation.Client.PostalCode;
             MyCom.Parameters.Add("@City", SqlDbType.VarChar);
-            MyCom.Parameters["@City"].Value = City;
+            MyCom.Parameters["@City"].Value = reservation.Client.City;
             MyCom.Parameters.Add("@Country", SqlDbType.VarChar);
-            MyCom.Parameters["@Country"].Value = Country;
+            MyCom.Parameters["@Country"].Value = reservation.Client.Country;
 
             // Vols
             MyCom.Parameters.Add("@Vols_name", SqlDbType.VarChar);
-            MyCom.Parameters["@Vols_name"].Value = VolName;
+            MyCom.Parameters["@Vols_name"].Value = reservation.Vol.Name;
             MyCom.Parameters.Add("@Vols_from", SqlDbType.VarChar);
-            MyCom.Parameters["@Vols_from"].Value = VolFrom;
+            MyCom.Parameters["@Vols_from"].Value = reservation.Vol.From;
             MyCom.Parameters.Add("@Vols_to", SqlDbType.VarChar);
-            MyCom.Parameters["@Vols_to"].Value = VolTo;
+            MyCom.Parameters["@Vols_to"].Value = reservation.Vol.To;
             MyCom.Parameters.Add("@Vols_category", SqlDbType.VarChar);
-            MyCom.Parameters["@Vols_category"].Value = VolCategory;
+            MyCom.Parameters["@Vols_category"].Value = reservation.Vol.Category;
             MyCom.Parameters.Add("@Vols_DateStart", SqlDbType.VarChar);
-            MyCom.Parameters["@Vols_DateStart"].Value = dateStart;
+            MyCom.Parameters["@Vols_DateStart"].Value = reservation.DateStart;
             MyCom.Parameters.Add("@Vols_DateEnd", SqlDbType.VarChar);
-            MyCom.Parameters["@Vols_DateEnd"].Value = dateEnd;
+            MyCom.Parameters["@Vols_DateEnd"].Value = reservation.DateEnd;
             MyCom.Parameters.Add("@Vols_Price", SqlDbType.VarChar);
-            MyCom.Parameters["@Vols_Price"].Value = Price;
+            MyCom.Parameters["@Vols_Price"].Value = reservation.Vol.Price;
 
             int Res = Convert.ToInt32(MyCom.ExecuteScalar());
             MyCom.Dispose();
