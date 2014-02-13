@@ -37,17 +37,17 @@ namespace ProjetNet.DataAccessL.libResaHotels
             MyCom.Parameters["@Country"].Value = reservation.Client.Country;
 
             // hotel
-            MyCom.Parameters.Add("@Hotels_Stars", SqlDbType.VarChar);
+            MyCom.Parameters.Add("@Hotels_Stars", SqlDbType.TinyInt);
             MyCom.Parameters["@Hotels_Stars"].Value = reservation.Hotel.Stars;
             MyCom.Parameters.Add("@Hotels_City", SqlDbType.VarChar);
             MyCom.Parameters["@Hotels_City"].Value = reservation.Hotel.City;
             MyCom.Parameters.Add("@Hotels_Country", SqlDbType.VarChar);
             MyCom.Parameters["@Hotels_Country"].Value = reservation.Hotel.Country;
-            MyCom.Parameters.Add("@Hotels_Price", SqlDbType.VarChar);
+            MyCom.Parameters.Add("@Hotels_Price", SqlDbType.Money);
             MyCom.Parameters["@Hotels_Price"].Value = reservation.Hotel.Price;
-            MyCom.Parameters.Add("@Hotels_dateStart", SqlDbType.VarChar);
+            MyCom.Parameters.Add("@Hotels_dateStart", SqlDbType.DateTime);
             MyCom.Parameters["@Hotels_dateStart"].Value = reservation.DateStart;
-            MyCom.Parameters.Add("@Hotels_dateEnd", SqlDbType.VarChar);
+            MyCom.Parameters.Add("@Hotels_dateEnd", SqlDbType.DateTime);
             MyCom.Parameters["@Hotels_dateEnd"].Value = reservation.DateEnd;
 
             int Res = Convert.ToInt32 (MyCom.ExecuteScalar());

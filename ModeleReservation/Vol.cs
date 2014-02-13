@@ -34,6 +34,6 @@ namespace ProjetNet.Modele.ModeleReservation
         /// <summary>
         /// Prix du vol.
         /// </summary>
-        public string Price { get; set; }
+        public decimal Price { get; set; }
     }
 }

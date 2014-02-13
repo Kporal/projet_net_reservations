@@ -49,11 +49,11 @@ namespace ProjetNet.DataAccessL.libResaVols
             MyCom.Parameters["@Vols_to"].Value = reservation.Vol.To;
             MyCom.Parameters.Add("@Vols_category", SqlDbType.VarChar);
             MyCom.Parameters["@Vols_category"].Value = reservation.Vol.Category;
-            MyCom.Parameters.Add("@Vols_DateStart", SqlDbType.VarChar);
+            MyCom.Parameters.Add("@Vols_DateStart", SqlDbType.DateTime);
             MyCom.Parameters["@Vols_DateStart"].Value = reservation.DateStart;
-            MyCom.Parameters.Add("@Vols_DateEnd", SqlDbType.VarChar);
+            MyCom.Parameters.Add("@Vols_DateEnd", SqlDbType.DateTime);
             MyCom.Parameters["@Vols_DateEnd"].Value = reservation.DateEnd;
-            MyCom.Parameters.Add("@Vols_Price", SqlDbType.VarChar);
+            MyCom.Parameters.Add("@Vols_Price", SqlDbType.Money);
             MyCom.Parameters["@Vols_Price"].Value = reservation.Vol.Price;
 
             int Res = Convert.ToInt32(MyCom.ExecuteScalar());

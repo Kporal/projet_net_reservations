@@ -29,11 +29,11 @@ namespace ProjetNet.Modele.ModeleReservation
         /// <summary>
         /// Date de départ.
         /// </summary>
-        public string DateStart { get; set; }
+        public DateTime DateStart { get; set; }
 
         /// <summary>
         /// Date de retour.
         /// </summary>
-        public string DateEnd { get; set; }
+        public DateTime DateEnd { get; set; }
     }
 }

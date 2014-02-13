@@ -14,7 +14,7 @@ namespace ProjetNet.Modele.ModeleReservation
         /// <summary>
         /// Etoiles.
         /// </summary>
-        public string Stars { get; set;  }
+        public byte Stars { get; set;  }
 
         /// <summary>
         /// Ville.
@@ -29,6 +29,6 @@ namespace ProjetNet.Modele.ModeleReservation
         /// <summary>
         /// Prix.
         /// </summary>
-        public string Price { get; set; }
+        public decimal Price { get; set; }
     }
 }
