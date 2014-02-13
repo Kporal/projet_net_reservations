@@ -67,6 +67,15 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.Button btn_rechercher;
         
         /// <summary>
+        /// Contrôle panelReservation.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelReservation;
+        
+        /// <summary>
         /// Contrôle dpdl_volDispo.
         /// </summary>
         /// <remarks>

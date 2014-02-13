@@ -52,20 +52,20 @@
                 <div class="form-group">
                     <label>Ville de départ :</label>
                     <asp:DropDownList ID="dpdl_villeDep" runat="server" >
-                        <asp:ListItem>Paris, France</asp:ListItem>
-                        <asp:ListItem>London, UK</asp:ListItem>
-                        <asp:ListItem>Berlin, Allemagne</asp:ListItem>
-                        <asp:ListItem>Rome, Italie</asp:ListItem>
+                        <asp:ListItem Value="Paris">Paris, France</asp:ListItem>
+                        <asp:ListItem Value="London">London, UK</asp:ListItem>
+                        <asp:ListItem Value="Berlin">Berlin, Allemagne</asp:ListItem>
+                        <asp:ListItem Value="Rome">Rome, Italie</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <br />
                 <div class="form-group">
                     <label>Ville d&#39;arrivée :</label>
                         <asp:DropDownList ID="dpdl_villeArr" runat="server">
-                            <asp:ListItem>Paris, France</asp:ListItem>
-                            <asp:ListItem>London, UK</asp:ListItem>
-                            <asp:ListItem>Berlin, Allemagne</asp:ListItem>
-                            <asp:ListItem>Rome, Italie</asp:ListItem>
+                            <asp:ListItem Value="Paris">Paris, France</asp:ListItem>
+                            <asp:ListItem Value="London">London, UK</asp:ListItem>
+                            <asp:ListItem Value="Berlin">Berlin, Allemagne</asp:ListItem>
+                            <asp:ListItem Value="Rome">Rome, Italie</asp:ListItem>
                         </asp:DropDownList>
                  </div>
             </div>
@@ -108,139 +108,146 @@
         </div>
 
         <!-- --- -->
-        <!-- Vol -->
+        <!-- SELECTION RESERVATION -->
         <!-- --- -->
-        <div>
-            <h1> Vol(s) disponible(s) :</h1>
-            <br />
-            <div class="form-group">
-                <label>Choix de votre vol :</label>
-                <asp:DropDownList ID="dpdl_volDispo" runat="server">
-                    <asp:ListItem>Vol Air France AZ345 : Paris - Londres</asp:ListItem>
-                </asp:DropDownList>
-             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>De :</label>
-                        <asp:Label ID="lbl_vol_from" runat="server" Text="Label"></asp:Label>
-                    </div>
-                    <div class="form-group">
-                        <label>Date Départ  :</label>
-                        <asp:Label ID="lbl_vol_dateStart" runat="server" Text="Label"></asp:Label>
-                    </div>
-                    <div class="form-group">
-                        <label>Prix :</label>
-                        <asp:Label ID="lbl_vol_price" runat="server" Text="Label"></asp:Label>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Vers :</label>
-                        <asp:Label ID="lbl_vol_to" runat="server" Text="Label"></asp:Label>
-                    </div>
-                    <div class="form-group">
-                        <label>Date Arrivée :</label>
-                        <asp:Label ID="lbl_vol_dateEnd" runat="server" Text="Label"></asp:Label>
-                    </div>
-                    <div class="form-group">
-                        <label>Categorie :</label>
-                        <asp:Label ID="lbl_vol_category" runat="server" Text="Label"></asp:Label>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- ----- -->
-        <!-- Hôtel -->
-        <!-- ----- -->
-        <div>
-            <h1>Hotel(s) :</h1>
-            <br />
-            
-            <div class="form-group">
-                <label>Choix de votre hôtel :</label>
-                <asp:DropDownList ID="dpdl_hotelDispo" runat="server">
-                    <asp:ListItem>Hotel 3 étoiles Le Fritz</asp:ListItem>
-                </asp:DropDownList>
-            </div>
-            <div class="form-group">
-                <label>Localisation :</label>
-                    <asp:Label ID="lbl_hotel_address" runat="server" Text="Address"></asp:Label>,
-                    <asp:Label ID="lbl_hotel_city" runat="server" Text="City"></asp:Label>,
-                    <asp:Label ID="lbl_hotel_country" runat="server" Text="Country"></asp:Label>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Prix : </label>
-                        <asp:Label ID="lbl_hotel_price" runat="server" Text="Price"></asp:Label>
-                    </div>
-                    <div class="form-group">
-                        <label>Date Debut :</label>
-                        <asp:Label ID="lbl_hotel_dateStart" runat="server" Text="DateStart"></asp:Label>
-                    </div>
-                    
-                </div>
-                <div class="col-md-6">
-                    
-                    <div class="form-group">
-                        <label>Etoile(s) :</label>
-                        <asp:Label ID="lbl_hotel_stars" runat="server" Text="Etoile"></asp:Label>
-                    </div>
-                    <div class="form-group">
-                        <label>Date Fin :</label>
-                        <asp:Label ID="lbl_hotel_dateEnd" runat="server" Text="DateEnd"></asp:Label>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <asp:Panel ID="panelReservation" runat="server" Visible="False">
 
-        <div>
-            <h1>Coordonnées :</h1>
-            <br />
+            <!-- --- -->
+            <!-- Vol -->
+            <!-- --- -->
+            <div>
+                <h1> Vol(s) disponible(s) :</h1>
+                <br />
+                <div class="form-group">
+                    <label>Choix de votre vol :</label>
+                    <asp:DropDownList ID="dpdl_volDispo" runat="server">
+                        <asp:ListItem>Vol Air France AZ345 : Paris - Londres</asp:ListItem>
+                    </asp:DropDownList>
+                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Nom :</label>
-                            <asp:TextBox class="form-control" ID="txt_clientName" runat="server"></asp:TextBox>
+                            <label>De :</label>
+                            <asp:Label ID="lbl_vol_from" runat="server" Text="Label"></asp:Label>
                         </div>
                         <div class="form-group">
-                            <label>Téléphone :</label>
-                            <asp:TextBox class="form-control" ID="txt_clientPhone" runat="server"></asp:TextBox>
+                            <label>Date Départ  :</label>
+                            <asp:Label ID="lbl_vol_dateStart" runat="server" Text="Label"></asp:Label>
                         </div>
                         <div class="form-group">
-                            <label>Adresse :</label>
-                            <asp:TextBox class="form-control" ID="txt_clientAddress" runat="server"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label> Ville :</label>
-                            <asp:TextBox class="form-control" ID="txt_clientCity" runat="server"></asp:TextBox>
+                            <label>Prix :</label>
+                            <asp:Label ID="lbl_vol_price" runat="server" Text="Label"></asp:Label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Prénom :</label>
-                            <asp:TextBox class="form-control" ID="txt_clientFirstname" runat="server"></asp:TextBox>
+                            <label>Vers :</label>
+                            <asp:Label ID="lbl_vol_to" runat="server" Text="Label"></asp:Label>
                         </div>
                         <div class="form-group">
-                            <label>E-Mail :</label>
-                            <asp:TextBox class="form-control" ID="txt_clientMail" runat="server"></asp:TextBox>
+                            <label>Date Arrivée :</label>
+                            <asp:Label ID="lbl_vol_dateEnd" runat="server" Text="Label"></asp:Label>
                         </div>
                         <div class="form-group">
-                            <label> Code Postal :</label>
-                            <asp:TextBox class="form-control" ID="txt_clientPostalCode" runat="server"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label> Pays :</label>
-                            <asp:TextBox class="form-control" ID="txt_clientPays" runat="server"></asp:TextBox>
+                            <label>Categorie :</label>
+                            <asp:Label ID="lbl_vol_category" runat="server" Text="Label"></asp:Label>
                         </div>
                     </div>
                 </div>
-        </div>
-        <br />
-        <asp:Button ID="btn_valider_voyage" runat="server" OnClick="btn_valider_voyage_Click" Text="Valider Voyage" />
+            </div>
 
+            <!-- ----- -->
+            <!-- Hôtel -->
+            <!-- ----- -->
+            <div>
+                <h1>Hotel(s) :</h1>
+                <br />
+            
+                <div class="form-group">
+                    <label>Choix de votre hôtel :</label>
+                    <asp:DropDownList ID="dpdl_hotelDispo" runat="server">
+                        <asp:ListItem>Hotel 3 étoiles Le Fritz</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                <div class="form-group">
+                    <label>Localisation :</label>
+                        <asp:Label ID="lbl_hotel_address" runat="server" Text="Address"></asp:Label>,
+                        <asp:Label ID="lbl_hotel_city" runat="server" Text="City"></asp:Label>,
+                        <asp:Label ID="lbl_hotel_country" runat="server" Text="Country"></asp:Label>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Prix : </label>
+                            <asp:Label ID="lbl_hotel_price" runat="server" Text="Price"></asp:Label>
+                        </div>
+                        <div class="form-group">
+                            <label>Date Debut :</label>
+                            <asp:Label ID="lbl_hotel_dateStart" runat="server" Text="DateStart"></asp:Label>
+                        </div>
+                    
+                    </div>
+                    <div class="col-md-6">
+                    
+                        <div class="form-group">
+                            <label>Etoile(s) :</label>
+                            <asp:Label ID="lbl_hotel_stars" runat="server" Text="Etoile"></asp:Label>
+                        </div>
+                        <div class="form-group">
+                            <label>Date Fin :</label>
+                            <asp:Label ID="lbl_hotel_dateEnd" runat="server" Text="DateEnd"></asp:Label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h1>Coordonnées :</h1>
+                <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Nom :</label>
+                                <asp:TextBox class="form-control" ID="txt_clientName" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label>Téléphone :</label>
+                                <asp:TextBox class="form-control" ID="txt_clientPhone" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label>Adresse :</label>
+                                <asp:TextBox class="form-control" ID="txt_clientAddress" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label> Ville :</label>
+                                <asp:TextBox class="form-control" ID="txt_clientCity" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Prénom :</label>
+                                <asp:TextBox class="form-control" ID="txt_clientFirstname" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label>E-Mail :</label>
+                                <asp:TextBox class="form-control" ID="txt_clientMail" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label> Code Postal :</label>
+                                <asp:TextBox class="form-control" ID="txt_clientPostalCode" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label> Pays :</label>
+                                <asp:TextBox class="form-control" ID="txt_clientPays" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <br />
+            <asp:Button ID="btn_valider_voyage" runat="server" OnClick="btn_valider_voyage_Click" Text="Valider Voyage" />
+        
+        </asp:Panel>
     <!-- --------- -->
     <!-- Validator -->
     <!-- --------- -->

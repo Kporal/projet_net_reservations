@@ -349,12 +349,12 @@ namespace IHM_Reservation.WebServiceConsultation {
     public partial class GetListHotelsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public IHM_Reservation.WebServiceConsultation.Hotel[] GetListHotelsResult;
+        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Hotel> GetListHotelsResult;
         
         public GetListHotelsResponseBody() {
         }
         
-        public GetListHotelsResponseBody(IHM_Reservation.WebServiceConsultation.Hotel[] GetListHotelsResult) {
+        public GetListHotelsResponseBody(System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Hotel> GetListHotelsResult) {
             this.GetListHotelsResult = GetListHotelsResult;
         }
     }
@@ -425,12 +425,12 @@ namespace IHM_Reservation.WebServiceConsultation {
     public partial class GetListVolsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public IHM_Reservation.WebServiceConsultation.Vol[] GetListVolsResult;
+        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Vol> GetListVolsResult;
         
         public GetListVolsResponseBody() {
         }
         
-        public GetListVolsResponseBody(IHM_Reservation.WebServiceConsultation.Vol[] GetListVolsResult) {
+        public GetListVolsResponseBody(System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Vol> GetListVolsResult) {
             this.GetListVolsResult = GetListVolsResult;
         }
     }
@@ -467,7 +467,7 @@ namespace IHM_Reservation.WebServiceConsultation {
             return base.Channel.GetListHotels(request);
         }
         
-        public IHM_Reservation.WebServiceConsultation.Hotel[] GetListHotels(string city) {
+        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Hotel> GetListHotels(string city) {
             IHM_Reservation.WebServiceConsultation.GetListHotelsRequest inValue = new IHM_Reservation.WebServiceConsultation.GetListHotelsRequest();
             inValue.Body = new IHM_Reservation.WebServiceConsultation.GetListHotelsRequestBody();
             inValue.Body.city = city;
@@ -492,7 +492,7 @@ namespace IHM_Reservation.WebServiceConsultation {
             return base.Channel.GetListVols(request);
         }
         
-        public IHM_Reservation.WebServiceConsultation.Vol[] GetListVols(string from, string to, System.DateTime dateStart) {
+        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Vol> GetListVols(string from, string to, System.DateTime dateStart) {
             IHM_Reservation.WebServiceConsultation.GetListVolsRequest inValue = new IHM_Reservation.WebServiceConsultation.GetListVolsRequest();
             inValue.Body = new IHM_Reservation.WebServiceConsultation.GetListVolsRequestBody();
             inValue.Body.from = from;
