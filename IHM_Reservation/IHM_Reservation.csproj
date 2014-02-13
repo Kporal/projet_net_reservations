@@ -92,6 +92,12 @@
     <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.Vol.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.Destination.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.GetListDestinationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\WebServiceConsultation\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -131,6 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\WebServiceConsultation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModeleReservation\ModeleReservation.csproj">
+      <Project>{2ba4eaa3-421b-4e2e-93ff-fd1cb1264364}</Project>
+      <Name>ModeleReservation</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -52,20 +52,12 @@
                 <div class="form-group">
                     <label>Ville de départ :</label>
                     <asp:DropDownList ID="dpdl_villeDep" runat="server" >
-                        <asp:ListItem Value="Paris">Paris, France</asp:ListItem>
-                        <asp:ListItem Value="London">London, UK</asp:ListItem>
-                        <asp:ListItem Value="Berlin">Berlin, Allemagne</asp:ListItem>
-                        <asp:ListItem Value="Rome">Rome, Italie</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <br />
                 <div class="form-group">
                     <label>Ville d&#39;arrivée :</label>
                         <asp:DropDownList ID="dpdl_villeArr" runat="server">
-                            <asp:ListItem Value="Paris">Paris, France</asp:ListItem>
-                            <asp:ListItem Value="London">London, UK</asp:ListItem>
-                            <asp:ListItem Value="Berlin">Berlin, Allemagne</asp:ListItem>
-                            <asp:ListItem Value="Rome">Rome, Italie</asp:ListItem>
                         </asp:DropDownList>
                  </div>
             </div>
@@ -122,7 +114,6 @@
                 <div class="form-group">
                     <label>Choix de votre vol :</label>
                     <asp:DropDownList ID="dpdl_volDispo" runat="server">
-                        <asp:ListItem>Vol Air France AZ345 : Paris - Londres</asp:ListItem>
                     </asp:DropDownList>
                  </div>
                 <div class="row">
@@ -167,7 +158,6 @@
                 <div class="form-group">
                     <label>Choix de votre hôtel :</label>
                     <asp:DropDownList ID="dpdl_hotelDispo" runat="server">
-                        <asp:ListItem>Hotel 3 étoiles Le Fritz</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
