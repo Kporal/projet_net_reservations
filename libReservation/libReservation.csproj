@@ -59,6 +59,10 @@
       <Project>{3b5912f3-83c5-4641-bc82-6a16c69f7520}</Project>
       <Name>libResaVols</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ModeleReservation\ModeleReservation.csproj">
+      <Project>{2ba4eaa3-421b-4e2e-93ff-fd1cb1264364}</Project>
+      <Name>ModeleReservation</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="libReservation.snk" />

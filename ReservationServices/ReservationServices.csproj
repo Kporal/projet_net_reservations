@@ -80,6 +80,10 @@
       <Project>{18120596-b43e-49b7-9505-1728161603fe}</Project>
       <Name>libReservation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ModeleReservation\ModeleReservation.csproj">
+      <Project>{2ba4eaa3-421b-4e2e-93ff-fd1cb1264364}</Project>
+      <Name>ModeleReservation</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
