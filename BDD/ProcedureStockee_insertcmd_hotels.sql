@@ -9,13 +9,13 @@ CREATE PROCEDURE dbo.insertCmdHotels
 		@PostalCode varchar(50),
 		@City varchar(50),
 		@Country varchar(50),
-		@Hotels_stars varchar(50),
+		@Hotels_stars tinyint,
 		@Hotels_address varchar(50),
 		@Hotels_city varchar(50),
 		@Hotels_country varchar(50),
-		@Hotels_price varchar(50),
-		@Hotels_dateStart varchar(50),
-		@Hotels_dateEnd varchar(50)
+		@Hotels_price money,
+		@Hotels_dateStart datetime,
+		@Hotels_dateEnd datetime
 AS
 
 BEGIN

@@ -14,9 +14,9 @@ CREATE PROCEDURE dbo.insertCmdVols
 		@Vols_from varchar(50),
 		@Vols_to varchar(50),
 		@Vols_category varchar(50),
-		@Vols_DateStart varchar(50),
-		@Vols_DateEnd varchar(50),
-		@Vols_Price varchar(50)
+		@Vols_DateStart datetime,
+		@Vols_DateEnd datetime,
+		@Vols_Price money
 AS
 
 BEGIN
