@@ -14,9 +14,9 @@ namespace IHM_Reservation
     {
         // initialisation du WS consultation
         private Service1Soap soap = new Service1SoapClient("Service1Soap12");
-        private List<IHM_Reservation.WebServiceConsultation.Hotel> hotels = new List<IHM_Reservation.WebServiceConsultation.Hotel>();
-        private List<IHM_Reservation.WebServiceConsultation.Vol> vols = new List<IHM_Reservation.WebServiceConsultation.Vol>();
-        private List<Destination> destinations = new List<Destination>();
+        private List<HotelWS> hotels = new List<HotelWS>();
+        private List<VolWS> vols = new List<VolWS>();
+        private List<DestinationWS> destinations = new List<DestinationWS>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,7 +34,7 @@ namespace IHM_Reservation
                 // reponse du WS
                 this.destinations = destinationResponse.Body.GetListDestinationsResult;
 
-                foreach (Destination d in this.destinations)
+                foreach (DestinationWS d in this.destinations)
                 {
                     dpdl_villeDep.Items.Add(new ListItem { Text = d.city + ", " + d.country, Value = d.id.ToString() });
                     dpdl_villeArr.Items.Add(new ListItem { Text = d.city + ", " + d.country, Value = d.id.ToString() });
@@ -45,33 +45,33 @@ namespace IHM_Reservation
         protected void btn_valider_voyage_Click(object sender, EventArgs e)
         {
             // info du vol
-            ProjetNet.Modele.ModeleReservation.Vol vol = new ProjetNet.Modele.ModeleReservation.Vol();
-            IHM_Reservation.WebServiceConsultation.Vol volSelected = this.vols[Convert.ToInt32(dpdl_volDispo.SelectedValue)];
+            Vol vol = new Vol();
+            VolWS volSelected = this.vols[Convert.ToInt32(dpdl_volDispo.SelectedValue)];
             vol.Name = volSelected.name;
             vol.Price = Convert.ToDecimal(volSelected.price);
             vol.Category = volSelected.category;
-            vol.From = this.destinations[Convert.ToInt32(volSelected.id_destination_from)].city;
-            vol.To = this.destinations[Convert.ToInt32(volSelected.id_destination_to)].city;
+            vol.From = this.destinations[volSelected.id_destination_from].city;
+            vol.To = this.destinations[volSelected.id_destination_to].city;
 
             // info de l'hotel
-            ProjetNet.Modele.ModeleReservation.Hotel hotel = new ProjetNet.Modele.ModeleReservation.Hotel();
-            IHM_Reservation.WebServiceConsultation.Hotel hotelSelected = this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedValue)];
+            Hotel hotel = new Hotel();
+            HotelWS hotelSelected = this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedValue)];
             hotel.Name = hotelSelected.name;
             hotel.Stars = Convert.ToByte(hotelSelected.stars);
             hotel.Price = hotel.Price;
-            hotel.City = this.destinations[Convert.ToInt32(hotelSelected.id_destination)].city;
-            hotel.Country = this.destinations[Convert.ToInt32(hotelSelected.id_destination)].country;
+            hotel.City = this.destinations[hotelSelected.id_destination].city;
+            hotel.Country = this.destinations[hotelSelected.id_destination].country;
 
             // infos du client
             Client client = new Client();
             client.FirstName = txt_clientFirstname.Text;
             client.LastName = txt_clientName.Text;
+            client.Mail = txt_clientMail.Text;
+            client.Phone = txt_clientPhone.Text;
             client.Address = txt_clientAddress.Text;
             client.PostalCode = txt_clientPostalCode.Text;
             client.City = txt_clientCity.Text;
             client.Country = txt_clientPays.Text;
-            client.Mail = txt_clientMail.Text;
-            client.Phone = txt_clientPhone.Text;
 
             // infos de la reservation
             ReservationHotelVol resa = new ReservationHotelVol();
@@ -99,7 +99,7 @@ namespace IHM_Reservation
             // reponse du WS
             this.hotels = hotelResponse.Body.GetListHotelsResult;
 
-            foreach (IHM_Reservation.WebServiceConsultation.Hotel h in this.hotels)
+            foreach (HotelWS h in this.hotels)
             {
                 dpdl_hotelDispo.Items.Add(new ListItem { Text = h.name + " - " + h.stars + "* - " + h.price + " €", Value = h.id.ToString() });
             }
@@ -112,7 +112,7 @@ namespace IHM_Reservation
             culture.DateTimeFormat.ShortDatePattern = "yyyy-MMM-dd";
             culture.DateTimeFormat.LongTimePattern = "yyyy-MMM-dd HH:mm:ss";
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-             */
+            */
 
             // creation de la requete
             GetListVolsRequestBody volRequestBody = new GetListVolsRequestBody(idFrom, idTo, dateStart);
@@ -122,7 +122,7 @@ namespace IHM_Reservation
             // reponse du WS
             this.vols = volResponse.Body.GetListVolsResult;
 
-            foreach (IHM_Reservation.WebServiceConsultation.Vol v in this.vols)
+            foreach (VolWS v in this.vols)
             {
                 dpdl_volDispo.Items.Add(
                     new ListItem { Text = v.name + " - " + v.category + " - " + v.price + " €", Value = v.id.ToString() });

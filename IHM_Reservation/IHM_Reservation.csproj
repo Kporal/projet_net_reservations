@@ -86,16 +86,16 @@
     <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.GetListVolsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.Hotel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.Vol.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.Destination.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.GetListDestinationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.DestinationWS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.HotelWS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.VolWS.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WebServiceConsultation\Reference.svcmap">

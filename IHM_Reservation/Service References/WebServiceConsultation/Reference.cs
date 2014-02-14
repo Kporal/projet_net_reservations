@@ -15,9 +15,9 @@ namespace IHM_Reservation.WebServiceConsultation {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Hotel", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HotelWS", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    public partial class Hotel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class HotelWS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -31,8 +31,7 @@ namespace IHM_Reservation.WebServiceConsultation {
         
         private double priceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string id_destinationField;
+        private int id_destinationField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -96,13 +95,13 @@ namespace IHM_Reservation.WebServiceConsultation {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string id_destination {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int id_destination {
             get {
                 return this.id_destinationField;
             }
             set {
-                if ((object.ReferenceEquals(this.id_destinationField, value) != true)) {
+                if ((this.id_destinationField.Equals(value) != true)) {
                     this.id_destinationField = value;
                     this.RaisePropertyChanged("id_destination");
                 }
@@ -121,9 +120,9 @@ namespace IHM_Reservation.WebServiceConsultation {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Vol", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VolWS", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    public partial class Vol : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class VolWS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -142,11 +141,9 @@ namespace IHM_Reservation.WebServiceConsultation {
         
         private System.DateTime dateEndField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string id_destination_fromField;
+        private int id_destination_fromField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string id_destination_toField;
+        private int id_destination_toField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -236,26 +233,26 @@ namespace IHM_Reservation.WebServiceConsultation {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string id_destination_from {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int id_destination_from {
             get {
                 return this.id_destination_fromField;
             }
             set {
-                if ((object.ReferenceEquals(this.id_destination_fromField, value) != true)) {
+                if ((this.id_destination_fromField.Equals(value) != true)) {
                     this.id_destination_fromField = value;
                     this.RaisePropertyChanged("id_destination_from");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string id_destination_to {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public int id_destination_to {
             get {
                 return this.id_destination_toField;
             }
             set {
-                if ((object.ReferenceEquals(this.id_destination_toField, value) != true)) {
+                if ((this.id_destination_toField.Equals(value) != true)) {
                     this.id_destination_toField = value;
                     this.RaisePropertyChanged("id_destination_to");
                 }
@@ -274,9 +271,9 @@ namespace IHM_Reservation.WebServiceConsultation {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Destination", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DestinationWS", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    public partial class Destination : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DestinationWS : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -432,12 +429,12 @@ namespace IHM_Reservation.WebServiceConsultation {
     public partial class GetListHotelsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Hotel> GetListHotelsResult;
+        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.HotelWS> GetListHotelsResult;
         
         public GetListHotelsResponseBody() {
         }
         
-        public GetListHotelsResponseBody(System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Hotel> GetListHotelsResult) {
+        public GetListHotelsResponseBody(System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.HotelWS> GetListHotelsResult) {
             this.GetListHotelsResult = GetListHotelsResult;
         }
     }
@@ -508,12 +505,12 @@ namespace IHM_Reservation.WebServiceConsultation {
     public partial class GetListVolsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Vol> GetListVolsResult;
+        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.VolWS> GetListVolsResult;
         
         public GetListVolsResponseBody() {
         }
         
-        public GetListVolsResponseBody(System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Vol> GetListVolsResult) {
+        public GetListVolsResponseBody(System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.VolWS> GetListVolsResult) {
             this.GetListVolsResult = GetListVolsResult;
         }
     }
@@ -569,12 +566,12 @@ namespace IHM_Reservation.WebServiceConsultation {
     public partial class GetListDestinationsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Destination> GetListDestinationsResult;
+        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.DestinationWS> GetListDestinationsResult;
         
         public GetListDestinationsResponseBody() {
         }
         
-        public GetListDestinationsResponseBody(System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Destination> GetListDestinationsResult) {
+        public GetListDestinationsResponseBody(System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.DestinationWS> GetListDestinationsResult) {
             this.GetListDestinationsResult = GetListDestinationsResult;
         }
     }
@@ -611,7 +608,7 @@ namespace IHM_Reservation.WebServiceConsultation {
             return base.Channel.GetListHotels(request);
         }
         
-        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Hotel> GetListHotels(int idCity) {
+        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.HotelWS> GetListHotels(int idCity) {
             IHM_Reservation.WebServiceConsultation.GetListHotelsRequest inValue = new IHM_Reservation.WebServiceConsultation.GetListHotelsRequest();
             inValue.Body = new IHM_Reservation.WebServiceConsultation.GetListHotelsRequestBody();
             inValue.Body.idCity = idCity;
@@ -636,7 +633,7 @@ namespace IHM_Reservation.WebServiceConsultation {
             return base.Channel.GetListVols(request);
         }
         
-        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Vol> GetListVols(int idFrom, int idTo, System.DateTime dateStart) {
+        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.VolWS> GetListVols(int idFrom, int idTo, System.DateTime dateStart) {
             IHM_Reservation.WebServiceConsultation.GetListVolsRequest inValue = new IHM_Reservation.WebServiceConsultation.GetListVolsRequest();
             inValue.Body = new IHM_Reservation.WebServiceConsultation.GetListVolsRequestBody();
             inValue.Body.idFrom = idFrom;
@@ -665,7 +662,7 @@ namespace IHM_Reservation.WebServiceConsultation {
             return base.Channel.GetListDestinations(request);
         }
         
-        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.Destination> GetListDestinations() {
+        public System.Collections.Generic.List<IHM_Reservation.WebServiceConsultation.DestinationWS> GetListDestinations() {
             IHM_Reservation.WebServiceConsultation.GetListDestinationsRequest inValue = new IHM_Reservation.WebServiceConsultation.GetListDestinationsRequest();
             inValue.Body = new IHM_Reservation.WebServiceConsultation.GetListDestinationsRequestBody();
             IHM_Reservation.WebServiceConsultation.GetListDestinationsResponse retVal = ((IHM_Reservation.WebServiceConsultation.Service1Soap)(this)).GetListDestinations(inValue);
