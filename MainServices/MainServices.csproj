@@ -43,13 +43,13 @@
       <Project>{2ba4eaa3-421b-4e2e-93ff-fd1cb1264364}</Project>
       <Name>ModeleReservation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ReservationServices\ReservationServices.csproj">
-      <Project>{b767aab8-f344-4ef7-b795-294ca2e4347b}</Project>
-      <Name>ReservationServices</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestionReservation.cs" />
     <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
