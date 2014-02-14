@@ -353,22 +353,13 @@ namespace IHM_Reservation.WebServiceConsultation {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListHotels", ReplyAction="*")]
         IHM_Reservation.WebServiceConsultation.GetListHotelsResponse GetListHotels(IHM_Reservation.WebServiceConsultation.GetListHotelsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListHotels", ReplyAction="*")]
-        System.Threading.Tasks.Task<IHM_Reservation.WebServiceConsultation.GetListHotelsResponse> GetListHotelsAsync(IHM_Reservation.WebServiceConsultation.GetListHotelsRequest request);
-        
         // CODEGEN : La génération du contrat de message depuis le nom d'élément GetListVolsResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListVols", ReplyAction="*")]
         IHM_Reservation.WebServiceConsultation.GetListVolsResponse GetListVols(IHM_Reservation.WebServiceConsultation.GetListVolsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListVols", ReplyAction="*")]
-        System.Threading.Tasks.Task<IHM_Reservation.WebServiceConsultation.GetListVolsResponse> GetListVolsAsync(IHM_Reservation.WebServiceConsultation.GetListVolsRequest request);
-        
         // CODEGEN : La génération du contrat de message depuis le nom d'élément GetListDestinationsResult de l'espace de noms http://tempuri.org/ n'est pas marqué nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListDestinations", ReplyAction="*")]
         IHM_Reservation.WebServiceConsultation.GetListDestinationsResponse GetListDestinations(IHM_Reservation.WebServiceConsultation.GetListDestinationsRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListDestinations", ReplyAction="*")]
-        System.Threading.Tasks.Task<IHM_Reservation.WebServiceConsultation.GetListDestinationsResponse> GetListDestinationsAsync(IHM_Reservation.WebServiceConsultation.GetListDestinationsRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -617,18 +608,6 @@ namespace IHM_Reservation.WebServiceConsultation {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<IHM_Reservation.WebServiceConsultation.GetListHotelsResponse> IHM_Reservation.WebServiceConsultation.Service1Soap.GetListHotelsAsync(IHM_Reservation.WebServiceConsultation.GetListHotelsRequest request) {
-            return base.Channel.GetListHotelsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<IHM_Reservation.WebServiceConsultation.GetListHotelsResponse> GetListHotelsAsync(int idCity) {
-            IHM_Reservation.WebServiceConsultation.GetListHotelsRequest inValue = new IHM_Reservation.WebServiceConsultation.GetListHotelsRequest();
-            inValue.Body = new IHM_Reservation.WebServiceConsultation.GetListHotelsRequestBody();
-            inValue.Body.idCity = idCity;
-            return ((IHM_Reservation.WebServiceConsultation.Service1Soap)(this)).GetListHotelsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         IHM_Reservation.WebServiceConsultation.GetListVolsResponse IHM_Reservation.WebServiceConsultation.Service1Soap.GetListVols(IHM_Reservation.WebServiceConsultation.GetListVolsRequest request) {
             return base.Channel.GetListVols(request);
         }
@@ -644,20 +623,6 @@ namespace IHM_Reservation.WebServiceConsultation {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<IHM_Reservation.WebServiceConsultation.GetListVolsResponse> IHM_Reservation.WebServiceConsultation.Service1Soap.GetListVolsAsync(IHM_Reservation.WebServiceConsultation.GetListVolsRequest request) {
-            return base.Channel.GetListVolsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<IHM_Reservation.WebServiceConsultation.GetListVolsResponse> GetListVolsAsync(int idFrom, int idTo, System.DateTime dateStart) {
-            IHM_Reservation.WebServiceConsultation.GetListVolsRequest inValue = new IHM_Reservation.WebServiceConsultation.GetListVolsRequest();
-            inValue.Body = new IHM_Reservation.WebServiceConsultation.GetListVolsRequestBody();
-            inValue.Body.idFrom = idFrom;
-            inValue.Body.idTo = idTo;
-            inValue.Body.dateStart = dateStart;
-            return ((IHM_Reservation.WebServiceConsultation.Service1Soap)(this)).GetListVolsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         IHM_Reservation.WebServiceConsultation.GetListDestinationsResponse IHM_Reservation.WebServiceConsultation.Service1Soap.GetListDestinations(IHM_Reservation.WebServiceConsultation.GetListDestinationsRequest request) {
             return base.Channel.GetListDestinations(request);
         }
@@ -667,17 +632,6 @@ namespace IHM_Reservation.WebServiceConsultation {
             inValue.Body = new IHM_Reservation.WebServiceConsultation.GetListDestinationsRequestBody();
             IHM_Reservation.WebServiceConsultation.GetListDestinationsResponse retVal = ((IHM_Reservation.WebServiceConsultation.Service1Soap)(this)).GetListDestinations(inValue);
             return retVal.Body.GetListDestinationsResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<IHM_Reservation.WebServiceConsultation.GetListDestinationsResponse> IHM_Reservation.WebServiceConsultation.Service1Soap.GetListDestinationsAsync(IHM_Reservation.WebServiceConsultation.GetListDestinationsRequest request) {
-            return base.Channel.GetListDestinationsAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<IHM_Reservation.WebServiceConsultation.GetListDestinationsResponse> GetListDestinationsAsync() {
-            IHM_Reservation.WebServiceConsultation.GetListDestinationsRequest inValue = new IHM_Reservation.WebServiceConsultation.GetListDestinationsRequest();
-            inValue.Body = new IHM_Reservation.WebServiceConsultation.GetListDestinationsRequestBody();
-            return ((IHM_Reservation.WebServiceConsultation.Service1Soap)(this)).GetListDestinationsAsync(inValue);
         }
     }
 }

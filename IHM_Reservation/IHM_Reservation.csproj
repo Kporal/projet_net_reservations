@@ -80,15 +80,6 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <None Include="Service References\WebServiceConsultation\configuration91.svcinfo" />
     <None Include="Service References\WebServiceConsultation\configuration.svcinfo" />
-    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.GetListHotelsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.GetListVolsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.GetListDestinationsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\WebServiceConsultation\IHM_Reservation.WebServiceConsultation.DestinationWS.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -125,6 +116,7 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Service References\WebServiceConsultation\wsConsultationServerSOAP.wsdl" />
+    <None Include="Service References\WebServiceConsultation\wsConsultationServerSOAP2.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
