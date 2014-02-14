@@ -69,17 +69,17 @@
                         <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
                         <OtherMonthDayStyle ForeColor="#999999" />
                         <SelectedDayStyle BackColor="#009999" ForeColor="#CCFF99" Font-Bold="True" />
-                         <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                        <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
                         <TitleStyle BackColor="#003399" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" BorderColor="#3366CC" BorderWidth="1px" Height="25px" />
                         <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
-                         <WeekendDayStyle BackColor="#CCCCFF" />
+                        <WeekendDayStyle BackColor="#CCCCFF" />
                     </asp:Calendar>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Date de fin :</label>
-                    <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest">
+                    <asp:Calendar ID="cal_dateEnd" runat="server" BackColor="White" BorderColor="#3366CC" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest">
                         <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
                         <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
                         <OtherMonthDayStyle ForeColor="#999999" />
@@ -92,6 +92,8 @@
                 </div>    
             </div>
         </div>
+        
+        <asp:Label ID="lbl_erreurWS" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Red" Text="Label" Visible="False"></asp:Label>
         
         <br />
         <asp:Button ID="btn_rechercher" runat="server" Text="Rechercher" OnClick="btn_rechercher_Click" />

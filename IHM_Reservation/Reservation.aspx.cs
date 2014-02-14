@@ -7,6 +7,7 @@ using IHM_Reservation.WebServiceConsultation;
 using System.Threading;
 using System.Globalization;
 using ProjetNet.Modele.ModeleReservation;
+using System.Web.Services.Protocols;
 
 namespace IHM_Reservation
 {
@@ -20,6 +21,7 @@ namespace IHM_Reservation
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            try {
             // test si la page est rendu pour la premiere fois
             if (!IsPostBack)
             {
@@ -40,44 +42,61 @@ namespace IHM_Reservation
                     dpdl_villeArr.Items.Add(new ListItem { Text = d.city + ", " + d.country, Value = d.id.ToString() });
                 }
             }
+                 }
+            catch (Exception soapException)
+            {
+                btn_rechercher.Enabled = false;
+                lbl_erreurWS.Text = "Un problème est survenu lors de la récupération des "+
+                "informations demandées. Veuillez réessayer plus tard...";
+                lbl_erreurWS.Visible = true;
+            }
         }
 
         protected void btn_valider_voyage_Click(object sender, EventArgs e)
         {
-            // info du vol
-            Vol vol = new Vol();
-            VolWS volSelected = this.vols[Convert.ToInt32(dpdl_volDispo.SelectedValue)];
-            vol.Name = volSelected.name;
-            vol.Price = Convert.ToDecimal(volSelected.price);
-            vol.Category = volSelected.category;
-            vol.From = this.destinations[volSelected.id_destination_from].city;
-            vol.To = this.destinations[volSelected.id_destination_to].city;
+            try
+            {
+                // info du vol
+                Vol vol = new Vol();
+                VolWS volSelected = this.vols[Convert.ToInt32(dpdl_volDispo.SelectedValue)];
+                vol.Name = volSelected.name;
+                vol.Price = Convert.ToDecimal(volSelected.price);
+                vol.Category = volSelected.category;
+                vol.From = this.destinations[volSelected.id_destination_from].city;
+                vol.To = this.destinations[volSelected.id_destination_to].city;
 
-            // info de l'hotel
-            Hotel hotel = new Hotel();
-            HotelWS hotelSelected = this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedValue)];
-            hotel.Name = hotelSelected.name;
-            hotel.Stars = Convert.ToByte(hotelSelected.stars);
-            hotel.Price = hotel.Price;
-            hotel.City = this.destinations[hotelSelected.id_destination].city;
-            hotel.Country = this.destinations[hotelSelected.id_destination].country;
+                // info de l'hotel
+                Hotel hotel = new Hotel();
+                HotelWS hotelSelected = this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedValue)];
+                hotel.Name = hotelSelected.name;
+                hotel.Stars = Convert.ToByte(hotelSelected.stars);
+                hotel.Price = hotel.Price;
+                hotel.City = this.destinations[hotelSelected.id_destination].city;
+                hotel.Country = this.destinations[hotelSelected.id_destination].country;
 
-            // infos du client
-            Client client = new Client();
-            client.FirstName = txt_clientFirstname.Text;
-            client.LastName = txt_clientName.Text;
-            client.Mail = txt_clientMail.Text;
-            client.Phone = txt_clientPhone.Text;
-            client.Address = txt_clientAddress.Text;
-            client.PostalCode = txt_clientPostalCode.Text;
-            client.City = txt_clientCity.Text;
-            client.Country = txt_clientPays.Text;
+                // infos du client
+                Client client = new Client();
+                client.FirstName = txt_clientFirstname.Text;
+                client.LastName = txt_clientName.Text;
+                client.Mail = txt_clientMail.Text;
+                client.Phone = txt_clientPhone.Text;
+                client.Address = txt_clientAddress.Text;
+                client.PostalCode = txt_clientPostalCode.Text;
+                client.City = txt_clientCity.Text;
+                client.Country = txt_clientPays.Text;
 
-            // infos de la reservation
-            ReservationHotelVol resa = new ReservationHotelVol();
-            resa.Client = client;
-            resa.Hotel = hotel;
-            resa.Vol = vol;
+                // infos de la reservation
+                ReservationHotelVol resa = new ReservationHotelVol();
+                resa.Client = client;
+                resa.Hotel = hotel;
+                resa.Vol = vol;
+            }
+            catch (Exception exception)
+            {
+                lbl_erreurWS.Text = "Un problème est survenu lors de l'enregistrement de votre "+
+                "réservation. Veuillez réessayer plus tard...";
+                lbl_erreurWS.Visible = true;
+            }
         }
 
         protected void btn_rechercher_Click(object sender, EventArgs e)
@@ -87,21 +106,31 @@ namespace IHM_Reservation
             int idTo = int.Parse(dpdl_villeArr.SelectedValue);
             DateTime dateStart = cal_dateStart.SelectedDate;
 
+           
             // *****************************
             // GetListHotels
             // *****************************
-
-            // creation de la requete
-            GetListHotelsRequestBody hotelRequestBody = new GetListHotelsRequestBody(idTo);
-            GetListHotelsRequest hotelRequest = new GetListHotelsRequest(hotelRequestBody);
-            // appel du WS
-            GetListHotelsResponse hotelResponse = this.soap.GetListHotels(hotelRequest);
-            // reponse du WS
-            this.hotels = hotelResponse.Body.GetListHotelsResult;
-
-            foreach (HotelWS h in this.hotels)
+            try
             {
-                dpdl_hotelDispo.Items.Add(new ListItem { Text = h.name + " - " + h.stars + "* - " + h.price + " €", Value = h.id.ToString() });
+                // creation de la requete
+                GetListHotelsRequestBody hotelRequestBody = new GetListHotelsRequestBody(idTo);
+                GetListHotelsRequest hotelRequest = new GetListHotelsRequest(hotelRequestBody);
+                // appel du WS
+                GetListHotelsResponse hotelResponse = this.soap.GetListHotels(hotelRequest);
+                // reponse du WS
+                this.hotels = hotelResponse.Body.GetListHotelsResult;
+
+                foreach (HotelWS h in this.hotels)
+                {
+                    dpdl_hotelDispo.Items.Add(new ListItem { Text = h.name + " - " + h.stars + "* - " + h.price + " €", Value = h.id.ToString() });
+                }
+            }
+            catch (Exception exception)
+            {
+                lbl_erreurWS.Text = "Un problème est survenu lors de la récupération des"+
+                "hôtels. Veuillez réessayer plus tard...";
+                lbl_erreurWS.Visible = true;
+
             }
 
             // *****************************
@@ -113,7 +142,8 @@ namespace IHM_Reservation
             culture.DateTimeFormat.LongTimePattern = "yyyy-MMM-dd HH:mm:ss";
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             */
-
+            try
+            {
             // creation de la requete
             GetListVolsRequestBody volRequestBody = new GetListVolsRequestBody(idFrom, idTo, dateStart);
             GetListVolsRequest volRequest = new GetListVolsRequest(volRequestBody);
@@ -126,6 +156,13 @@ namespace IHM_Reservation
             {
                 dpdl_volDispo.Items.Add(
                     new ListItem { Text = v.name + " - " + v.category + " - " + v.price + " €", Value = v.id.ToString() });
+            }
+            }
+            catch (Exception exception)
+            {
+                lbl_erreurWS.Text = "Un problème est survenu lors de la récupération des" +
+                "vols. Veuillez réessayer plus tard...";
+                lbl_erreurWS.Visible = true;
             }
 
             panelReservation.Visible = true;

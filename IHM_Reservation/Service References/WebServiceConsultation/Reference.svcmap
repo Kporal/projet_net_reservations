@@ -2,7 +2,6 @@
 <ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bfd14f59-121a-49b3-b790-9b83cd1ca182" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
-    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -21,10 +20,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="wsConsultationServerSOAP.wsdl" MetadataType="Wsdl" ID="e38c611e-eb43-494d-ba2d-816f7bb16eba" SourceId="1" SourceUrl="http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php?WSDL" />
+    <MetadataFile FileName="wsConsultationServerSOAP1.wsdl" MetadataType="Wsdl" ID="3e290e91-e217-4c2e-a481-855a6b8a5c18" SourceId="1" SourceUrl="http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
