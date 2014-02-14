@@ -8,11 +8,18 @@ using System.Threading;
 using System.Globalization;
 using ProjetNet.Modele.ModeleReservation;
 using System.Web.Services.Protocols;
+using System.Messaging;
+
 
 namespace IHM_Reservation
 {
     public partial class _Default : System.Web.UI.Page
     {
+        /// <summary>
+        /// Chemin de la messaging queue.
+        /// </summary>
+        private const string messageQueuePath = @".\$private\reservation";
+
         // initialisation du WS consultation
         private Service1Soap soap = new Service1SoapClient("Service1Soap12");
         private List<HotelWS> hotels = new List<HotelWS>();
@@ -54,6 +61,11 @@ namespace IHM_Reservation
 
         protected void btn_valider_voyage_Click(object sender, EventArgs e)
         {
+            // Création de la queue.
+            MessageQueue msgQ = new MessageQueue(messageQueuePath);
+            // Rends les messages récupérables en cas de crash.
+            msgQ.DefaultPropertiesToSend.Recoverable = true;
+
             try
             {
                 // info du vol
@@ -85,17 +97,25 @@ namespace IHM_Reservation
                 client.City = txt_clientCity.Text;
                 client.Country = txt_clientPays.Text;
 
-                // infos de la reservation
-                ReservationHotelVol resa = new ReservationHotelVol();
-                resa.Client = client;
-                resa.Hotel = hotel;
-                resa.Vol = vol;
+                // Envois du message.
+                msgQ.Send(new ReservationHotelVol()
+                    {
+                        Client = client,
+                        Hotel = hotel,
+                        Vol = vol,
+                        DateEnd = this.cal_dateEnd.SelectedDate,
+                        DateStart = this.cal_dateStart.SelectedDate
+                    }, "Message de reservation");
             }
             catch (Exception exception)
             {
                 lbl_erreurWS.Text = "Un problème est survenu lors de l'enregistrement de votre "+
                 "réservation. Veuillez réessayer plus tard...";
                 lbl_erreurWS.Visible = true;
+            }
+            finally
+            {
+                msgQ.Close();
             }
         }
 
