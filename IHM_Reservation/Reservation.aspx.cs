@@ -70,6 +70,8 @@ namespace IHM_Reservation
             client.PostalCode = txt_clientPostalCode.Text;
             client.City = txt_clientCity.Text;
             client.Country = txt_clientPays.Text;
+            client.Mail = txt_clientMail.Text;
+            client.Phone = txt_clientPhone.Text;
 
             // infos de la reservation
             ReservationHotelVol resa = new ReservationHotelVol();

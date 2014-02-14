@@ -22,6 +22,16 @@ namespace ProjetNet.Modele.ModeleReservation
         public string LastName { get; set;  }
 
         /// <summary>
+        /// Mail.
+        /// </summary>
+        public string Mail { get; set; }
+
+        /// <summary>
+        /// Telephone.
+        /// </summary>
+        public string Phone { get; set; }
+
+        /// <summary>
         /// Adresse.
         /// </summary>
         public string Address { get; set; }
