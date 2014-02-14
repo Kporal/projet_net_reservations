@@ -12,6 +12,11 @@ namespace ProjetNet.Modele.ModeleReservation
     public class Hotel
     {
         /// <summary>
+        /// Nom.
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
         /// Etoiles.
         /// </summary>
         public byte Stars { get; set;  }

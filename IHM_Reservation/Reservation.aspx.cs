@@ -56,6 +56,7 @@ namespace IHM_Reservation
             // info de l'hotel
             ProjetNet.Modele.ModeleReservation.Hotel hotel = new ProjetNet.Modele.ModeleReservation.Hotel();
             IHM_Reservation.WebServiceConsultation.Hotel hotelSelected = this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedValue)];
+            hotel.Name = hotelSelected.name;
             hotel.Stars = Convert.ToByte(hotelSelected.stars);
             hotel.Price = hotel.Price;
             hotel.City = this.destinations[Convert.ToInt32(hotelSelected.id_destination)].city;
