@@ -13,13 +13,13 @@ namespace IHM_Reservation {
     public partial class _Default {
         
         /// <summary>
-        /// Contrôle form1.
+        /// Contrôle formReservation.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formReservation;
         
         /// <summary>
         /// Contrôle dpdl_villeDep.
@@ -157,15 +157,6 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.DropDownList dpdl_hotelDispo;
         
         /// <summary>
-        /// Contrôle lbl_hotel_address.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_hotel_address;
-        
-        /// <summary>
         /// Contrôle lbl_hotel_city.
         /// </summary>
         /// <remarks>
@@ -184,22 +175,13 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.Label lbl_hotel_country;
         
         /// <summary>
-        /// Contrôle lbl_hotel_price.
+        /// Contrôle lbl_hotel_name.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_hotel_price;
-        
-        /// <summary>
-        /// Contrôle lbl_hotel_dateStart.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_hotel_dateStart;
+        protected global::System.Web.UI.WebControls.Label lbl_hotel_name;
         
         /// <summary>
         /// Contrôle lbl_hotel_stars.
@@ -211,13 +193,13 @@ namespace IHM_Reservation {
         protected global::System.Web.UI.WebControls.Label lbl_hotel_stars;
         
         /// <summary>
-        /// Contrôle lbl_hotel_dateEnd.
+        /// Contrôle lbl_hotel_price.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_hotel_dateEnd;
+        protected global::System.Web.UI.WebControls.Label lbl_hotel_price;
         
         /// <summary>
         /// Contrôle txt_clientName.
