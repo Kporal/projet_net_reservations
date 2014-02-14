@@ -68,15 +68,44 @@ namespace IHM_Reservation
 
             try
             {
+                // info du vol
+                Vol vol = new Vol();
+                VolWS volSelected = this.vols[Convert.ToInt32(dpdl_volDispo.SelectedValue)];
+                vol.Name = volSelected.name;
+                vol.Price = Convert.ToDecimal(volSelected.price);
+                vol.Category = volSelected.category;
+                vol.From = this.destinations[volSelected.id_destination_from].city;
+                vol.To = this.destinations[volSelected.id_destination_to].city;
+
+                // info de l'hotel
+                Hotel hotel = new Hotel();
+                HotelWS hotelSelected = this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedValue)];
+                hotel.Name = hotelSelected.name;
+                hotel.Stars = Convert.ToByte(hotelSelected.stars);
+                hotel.Price = hotel.Price;
+                hotel.City = this.destinations[hotelSelected.id_destination].city;
+                hotel.Country = this.destinations[hotelSelected.id_destination].country;
+
+                // infos du client
+                Client client = new Client();
+                client.FirstName = txt_clientFirstname.Text;
+                client.LastName = txt_clientName.Text;
+                client.Mail = txt_clientMail.Text;
+                client.Phone = txt_clientPhone.Text;
+                client.Address = txt_clientAddress.Text;
+                client.PostalCode = txt_clientPostalCode.Text;
+                client.City = txt_clientCity.Text;
+                client.Country = txt_clientPays.Text;
+
                 // Envois du message.
                 msgQ.Send(new ReservationHotelVol()
-                {
-                    Client = getClientSelected(),
-                    Hotel = getHotelSelected(),
-                    Vol = getVolSelected(),
-                    DateEnd = this.cal_dateEnd.SelectedDate,
-                    DateStart = this.cal_dateStart.SelectedDate
-                }, "Message de reservation");
+                    {
+                        Client = client,
+                        Hotel = hotel,
+                        Vol = vol,
+                        DateEnd = this.cal_dateEnd.SelectedDate,
+                        DateStart = this.cal_dateStart.SelectedDate
+                    }, "Message de reservation");
             }
             catch (Exception exception)
             {
