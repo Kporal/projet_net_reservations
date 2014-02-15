@@ -130,16 +130,6 @@ namespace IHM_Reservation
             }
         }
 
-        protected void dpdl_volDispo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            setDetailVol(this.vols[Convert.ToInt32(dpdl_volDispo.SelectedIndex)]);
-        }
-
-        protected void dpdl_hotelDispo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            setDetailHotel(this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedIndex)]);
-        }
-
         private void getListVols(int idFrom, int idTo, DateTime dateStart)
         {
             try
@@ -157,10 +147,13 @@ namespace IHM_Reservation
                 // insertion des vols dans la liste
                 foreach (VolWS v in this.vols)
                 {
+                    DestinationWS from = getDestinationById(v.id_destination_from);
+                    DestinationWS to = getDestinationById(v.id_destination_to);
                     dpdl_volDispo.Items.Add(
-                        new ListItem { Text = v.name + " - " + v.category + " - " + v.price + " €", Value = v.id.ToString() });
+                        new ListItem { Text = v.name + " - " + v.category + " - " + v.price + " €" 
+                            + " de " + from.city + ", " + from.country + " vers " + to.city + ", " 
+                            + to.country, Value = v.id.ToString() });
                 }
-                setDetailVol(this.vols[0]);
             }
             catch (Exception exception)
             {
@@ -189,9 +182,9 @@ namespace IHM_Reservation
                 // insertion des hotels dans la liste
                 foreach (HotelWS h in this.hotels)
                 {
-                    dpdl_hotelDispo.Items.Add(new ListItem { Text = h.name + " - " + h.stars + "* - " + h.price + " €", Value = h.id.ToString() });
+                    DestinationWS to = getDestinationById(h.id_destination);
+                    dpdl_hotelDispo.Items.Add(new ListItem { Text = h.name + " - " + h.stars + "* - " + h.price + " €" + " à " + to.city + ", " + to.country, Value = h.id.ToString() });
                 }
-                setDetailHotel(this.hotels[0]);
             }
             catch (Exception exception)
             {
@@ -207,7 +200,7 @@ namespace IHM_Reservation
         {
             // info de l'hotel
             Hotel hotel = new Hotel();
-            HotelWS hotelSelected = this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedValue)];
+            HotelWS hotelSelected = getHotelById(Convert.ToInt32(dpdl_hotelDispo.SelectedValue));
             hotel.Name = hotelSelected.name;
             hotel.Stars = Convert.ToByte(hotelSelected.stars);
             hotel.Price = hotel.Price;
@@ -220,7 +213,7 @@ namespace IHM_Reservation
         {
             // info du vol
             Vol vol = new Vol();
-            VolWS volSelected = this.vols[Convert.ToInt32(dpdl_volDispo.SelectedValue)];
+            VolWS volSelected = getVolById(Convert.ToInt32(dpdl_volDispo.SelectedValue));
             vol.Name = volSelected.name;
             vol.Price = Convert.ToDecimal(volSelected.price);
             vol.Category = volSelected.category;
@@ -244,27 +237,6 @@ namespace IHM_Reservation
             return client;
         }
 
-        private void setDetailVol(VolWS vol)
-        {
-            lbl_vol_category.Text = vol.category;
-            lbl_vol_dateStart.Text = vol.dateStart.ToString();
-            lbl_vol_dateEnd.Text = vol.dateEnd.ToString();
-            DestinationWS destination = getDestinationById(vol.id_destination_from);
-            lbl_vol_from.Text = destination.city + ", " + destination.country;
-            destination = getDestinationById(vol.id_destination_to);
-            lbl_vol_to.Text = destination.city + ", " + destination.country;
-            lbl_vol_price.Text = vol.price.ToString();
-        }
-
-        private void setDetailHotel(HotelWS hotel)
-        {
-            lbl_hotel_stars.Text = hotel.stars.ToString();
-            lbl_hotel_price.Text = hotel.price.ToString();
-            lbl_hotel_name.Text = hotel.name;
-            lbl_hotel_city.Text = getDestinationById(hotel.id_destination).city;
-            lbl_hotel_country.Text = getDestinationById(hotel.id_destination).country;
-        }
-
         private DestinationWS getDestinationById(int idDestination)
         {
             if (this.destinations.ContainsKey(idDestination))
@@ -274,5 +246,28 @@ namespace IHM_Reservation
             return new DestinationWS();
         }
 
+        private VolWS getVolById(int id)
+        {
+            foreach (VolWS v in this.vols) 
+            {
+                if (v.id == id)
+                {
+                    return v;
+                }
+            }
+            return new VolWS();
+        }
+
+        private HotelWS getHotelById(int id)
+        {
+            foreach (HotelWS h in this.hotels)
+            {
+                if (h.id == id)
+                {
+                    return h;
+                }
+            }
+            return new HotelWS();
+        }
     }
 }

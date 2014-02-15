@@ -102,39 +102,8 @@
                         <br />
                         <div class="form-group">
                             <label>Choix de votre vol :</label>
-                            <asp:DropDownList ID="dpdl_volDispo" runat="server" OnSelectedIndexChanged="dpdl_volDispo_SelectedIndexChanged">
+                            <asp:DropDownList ID="dpdl_volDispo" runat="server">
                             </asp:DropDownList>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>De :</label>
-                                    <asp:Label ID="lbl_vol_from" runat="server" Text="Label"></asp:Label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Date Départ  :</label>
-                                    <asp:Label ID="lbl_vol_dateStart" runat="server" Text="Label"></asp:Label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Prix :</label>
-                                    <asp:Label ID="lbl_vol_price" runat="server" Text="Label"></asp:Label> 
-                                    €
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Vers :</label>
-                                    <asp:Label ID="lbl_vol_to" runat="server" Text="Label"></asp:Label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Date Arrivée :</label>
-                                    <asp:Label ID="lbl_vol_dateEnd" runat="server" Text="Label"></asp:Label>
-                                </div>
-                                <div class="form-group">
-                                    <label>Categorie :</label>
-                                    <asp:Label ID="lbl_vol_category" runat="server" Text="Label"></asp:Label>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -147,28 +116,8 @@
 
                         <div class="form-group">
                             <label>Choix de votre hôtel :</label>
-                            <asp:DropDownList ID="dpdl_hotelDispo" runat="server" OnSelectedIndexChanged="dpdl_hotelDispo_SelectedIndexChanged">
+                            <asp:DropDownList ID="dpdl_hotelDispo" runat="server">
                             </asp:DropDownList>
-                        </div>
-                        <div class="form-group">
-                            <label>Localisation :</label>
-                            <asp:Label ID="lbl_hotel_city" runat="server" Text="City"></asp:Label>,
-                            <asp:Label ID="lbl_hotel_country" runat="server" Text="Country"></asp:Label>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <label>Nom :</label>
-                                        <asp:Label ID="lbl_hotel_name" runat="server" Text="DateStart"></asp:Label>
-                                        <asp:Label ID="lbl_hotel_stars" runat="server" Text="Etoile"></asp:Label>
-                                        étoiles
-                                    </div>
-                                    <label>Prix : </label>
-                                    <asp:Label ID="lbl_hotel_price" runat="server" Text="Price"></asp:Label>
-                                    €
-                                </div>
-                            </div>
                         </div>
                     </div>
 
