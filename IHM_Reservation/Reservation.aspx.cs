@@ -92,22 +92,30 @@ namespace IHM_Reservation
 
         protected void btn_rechercher_Click(object sender, EventArgs e)
         {
-            // recuperation des elements de recherchent du formulaire
-            int idFrom = int.Parse(dpdl_villeDep.SelectedValue);
-            int idTo = int.Parse(dpdl_villeArr.SelectedValue);
-            DateTime dateStart = cal_dateStart.SelectedDate;
+            try
+            {
+                // recuperation des elements de recherchent du formulaire
+                int idFrom = int.Parse(dpdl_villeDep.SelectedValue);
+                int idTo = int.Parse(dpdl_villeArr.SelectedValue);
+                DateTime dateStart = cal_dateStart.SelectedDate;
+                panelReservation.Visible = true;
+                btn_valider_voyage.Enabled = true;
 
-            // *****************************
-            // GetListHotels
-            // *****************************
-            getListHotels(idTo);
+                // *****************************
+                // GetListHotels
+                // *****************************
+                getListHotels(idTo);
 
-            // *****************************
-            // GetListVols
-            // *****************************
-            getListVols(idFrom, idTo, dateStart);
-
-            panelReservation.Visible = true;
+                // *****************************
+                // GetListVols
+                // *****************************
+                getListVols(idFrom, idTo, dateStart);
+            }
+            catch (Exception exception)
+            {
+                panelReservation.Visible = false;
+                btn_valider_voyage.Enabled = false;
+            }
         }
 
         protected void dpdl_volDispo_SelectedIndexChanged(object sender, EventArgs e)
@@ -142,7 +150,9 @@ namespace IHM_Reservation
             }
             catch (Exception exception)
             {
-                lbl_erreurWS.Text = "Un problème est survenu lors de la récupération des" +
+                btn_valider_voyage.Enabled = false;
+                panelReservation.Visible = false;
+                lbl_erreurWS.Text = "Un problème est survenu lors de la récupération des " +
                 "vols. Veuillez réessayer plus tard...";
                 lbl_erreurWS.Visible = true;
             }
@@ -169,7 +179,9 @@ namespace IHM_Reservation
             }
             catch (Exception exception)
             {
-                lbl_erreurWS.Text = "Un problème est survenu lors de la récupération des" +
+                btn_valider_voyage.Enabled = false;
+                panelReservation.Visible = false;
+                lbl_erreurWS.Text = "Un problème est survenu lors de la récupération des " +
                 "hôtels. Veuillez réessayer plus tard...";
                 lbl_erreurWS.Visible = true;
             }
