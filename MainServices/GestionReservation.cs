@@ -1,4 +1,5 @@
 ﻿using ProjetNet.Modele.ModeleReservation;
+using ProjetNet.Services.MainServices.WebServiceReservation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace ProjetNet.Services.MainServices
             System.Diagnostics.Debug.WriteLine("(Info) Lancement du service de Gestion des reservations.");
             // Créé la queue de messages et son formateur.
             MessageQueue myQueue = new MessageQueue(QueuePath);
-            myQueue.Formatter = new XmlMessageFormatter(new Type[] { typeof(ReservationHotelVol) });
+            myQueue.Formatter = new XmlMessageFormatter(new Type[] { typeof(ProjetNet.Modele.ModeleReservation.ReservationHotelVol) });
 
             // Ajoute l'evenement de reception d'un message.
             myQueue.PeekCompleted += new
@@ -47,8 +48,42 @@ namespace ProjetNet.Services.MainServices
             try
             {
                 // Récupération du message.
-                ReservationHotelVol reservation = (ReservationHotelVol) mq.EndPeek(asyncResult.AsyncResult).Body;
+                ProjetNet.Modele.ModeleReservation.ReservationHotelVol reservation = (ProjetNet.Modele.ModeleReservation.ReservationHotelVol) mq.EndPeek(asyncResult.AsyncResult).Body;
 
+                WebServiceReservationSoap serviceReservationSOAP = new WebServiceReservationSoapClient();
+                ReserverRequestBody requestBody = new ReserverRequestBody(new WebServiceReservation.ReservationHotelVol()
+                    {
+                        Client = new WebServiceReservation.Client() {
+                            FirstName = reservation.Client.FirstName,
+                            LastName = reservation.Client.LastName,
+                            Mail = reservation.Client.Mail,
+                            Phone = reservation.Client.Phone,
+                            Address = reservation.Client.Address,
+                            City = reservation.Client.City,
+                            PostalCode = reservation.Client.PostalCode,
+                            Country = reservation.Client.Country
+                        },
+                        Hotel = new WebServiceReservation.Hotel() {
+                            Name = reservation.Hotel.Name,
+                            Stars = reservation.Hotel.Stars,
+                            Price = reservation.Hotel.Price,
+                            City = reservation.Hotel.City,
+                            Country = reservation.Hotel.Country
+                        },
+                        Vol = new WebServiceReservation.Vol() {
+                            Name = reservation.Vol.Name,
+                            From = reservation.Vol.From,
+                            To = reservation.Vol.To,
+                            Price = reservation.Vol.Price,
+                            Category = reservation.Vol.Category
+                        },
+                        DateEnd = reservation.DateEnd,
+                        DateStart = reservation.DateStart
+                    });
+                ReserverRequest reserverRequest = new ReserverRequest(requestBody);
+
+                // appel du WS
+                serviceReservationSOAP.Reserver(reserverRequest);
                 
                 System.Diagnostics.Debug.Write("(Info) Reservation reussie.");
                 // Efface le message.

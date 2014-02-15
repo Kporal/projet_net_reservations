@@ -26,6 +26,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeleReservation", "ModeleReservation\ModeleReservation.csproj", "{2BA4EAA3-421B-4E2E-93FF-FD1CB1264364}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainServices", "MainServices\MainServices.csproj", "{63CE9B2D-3CD0-4135-9D33-05C0C4E3A17A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B767AAB8-F344-4EF7-B795-294CA2E4347B} = {B767AAB8-F344-4EF7-B795-294CA2E4347B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
