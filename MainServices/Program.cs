@@ -10,7 +10,7 @@ namespace ProjetNet.Services.MainServices
     {
         static public void Main()
         {
-            System.Diagnostics.Debug.Write("(Info) Lancement des services.");
+            System.Diagnostics.Debug.WriteLine("(Info) Lancement des services.");
             GestionReservation resa = new GestionReservation();
         }
     }

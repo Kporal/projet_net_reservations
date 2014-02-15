@@ -17,7 +17,7 @@ namespace IHM_Reservation
         /// <summary>
         /// Chemin de la messaging queue.
         /// </summary>
-        private const string messageQueuePath = @".\$private\reservation";
+        private const string messageQueuePath = @".\private$\reservation";
         // initialisation du WS consultation
         private Service1Soap soap = new Service1SoapClient("Service1Soap12");
         private List<HotelWS> hotels = new List<HotelWS>();

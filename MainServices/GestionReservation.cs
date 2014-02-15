@@ -16,11 +16,11 @@ namespace ProjetNet.Services.MainServices
         /// <summary>
         /// Chemin d'acces à la queue.
         /// </summary>
-        private const string QueuePath = @".\$private\reservation";
+        private const string QueuePath = @".\private$\reservation";
 
         public GestionReservation()
         {
-            System.Diagnostics.Debug.Write("(Info) Lancement du service de Gestion des reservations.");
+            System.Diagnostics.Debug.WriteLine("(Info) Lancement du service de Gestion des reservations.");
             // Créé la queue de messages et son formateur.
             MessageQueue myQueue = new MessageQueue(QueuePath);
             myQueue.Formatter = new XmlMessageFormatter(new Type[] { typeof(ReservationHotelVol) });
@@ -43,7 +43,7 @@ namespace ProjetNet.Services.MainServices
 		{
 			// Récupère la queue.
 			MessageQueue mq = (MessageQueue)source;
-            System.Diagnostics.Debug.Write("(Info) Reception d'une demande de reservation");
+            System.Diagnostics.Debug.WriteLine("(Info) Reception d'une demande de reservation");
             try
             {
                 // Récupération du message.
