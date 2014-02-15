@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -22,28 +23,39 @@ namespace IHM_Reservation
         private Service1Soap soap = new Service1SoapClient("Service1Soap12");
         private List<HotelWS> hotels = new List<HotelWS>();
         private List<VolWS> vols = new List<VolWS>();
-        private List<DestinationWS> destinations = new List<DestinationWS>();
+        private Dictionary<int, DestinationWS> destinations = new Dictionary<int, DestinationWS>();
+
+        public _Default()
+        {
+            // *****************************
+            // GetListDestination
+            // *****************************
+
+            // creation de la requete
+            GetListDestinationsRequest destinationRequest = new GetListDestinationsRequest(new GetListDestinationsRequestBody());
+            // appel du WS
+            GetListDestinationsResponse destinationResponse = this.soap.GetListDestinations(destinationRequest);
+
+            // mise en caches des destinations
+            foreach (DestinationWS d in destinationResponse.Body.GetListDestinationsResult)
+            {
+                this.destinations.Add(d.id, d);
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
+                // reset du message d'erreur
+                lbl_erreurWS.Visible = false;
+                lbl_erreurWS.Text = "";
+
                 // test si la page est rendu pour la premiere fois
                 if (!IsPostBack)
                 {
-                    // *****************************
-                    // GetListDestination
-                    // *****************************
-
-                    // creation de la requete
-                    GetListDestinationsRequest destinationRequest = new GetListDestinationsRequest(new GetListDestinationsRequestBody());
-                    // appel du WS
-                    GetListDestinationsResponse destinationResponse = this.soap.GetListDestinations(destinationRequest);
-                    // reponse du WS
-                    this.destinations = destinationResponse.Body.GetListDestinationsResult;
-
                     // insertion des destinations dans les listes
-                    foreach (DestinationWS d in this.destinations)
+                    foreach (DestinationWS d in this.destinations.Values)
                     {
                         dpdl_villeDep.Items.Add(new ListItem { Text = d.city + ", " + d.country, Value = d.id.ToString() });
                         dpdl_villeArr.Items.Add(new ListItem { Text = d.city + ", " + d.country, Value = d.id.ToString() });
@@ -120,12 +132,12 @@ namespace IHM_Reservation
 
         protected void dpdl_volDispo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setDetailVol(this.vols[Convert.ToInt32(dpdl_volDispo.SelectedValue)]);
+            setDetailVol(this.vols[Convert.ToInt32(dpdl_volDispo.SelectedIndex)]);
         }
 
         protected void dpdl_hotelDispo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setDetailHotel(this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedValue)]);
+            setDetailHotel(this.hotels[Convert.ToInt32(dpdl_hotelDispo.SelectedIndex)]);
         }
 
         private void getListVols(int idFrom, int idTo, DateTime dateStart)
@@ -140,6 +152,8 @@ namespace IHM_Reservation
                 // reponse du WS
                 this.vols = volResponse.Body.GetListVolsResult;
 
+                // reset de la liste des vols
+                dpdl_volDispo.Items.Clear();
                 // insertion des vols dans la liste
                 foreach (VolWS v in this.vols)
                 {
@@ -170,6 +184,8 @@ namespace IHM_Reservation
                 // reponse du WS
                 this.hotels = hotelResponse.Body.GetListHotelsResult;
 
+                // reset de la liste des hotels
+                dpdl_hotelDispo.Items.Clear();
                 // insertion des hotels dans la liste
                 foreach (HotelWS h in this.hotels)
                 {
@@ -233,8 +249,10 @@ namespace IHM_Reservation
             lbl_vol_category.Text = vol.category;
             lbl_vol_dateStart.Text = vol.dateStart.ToString();
             lbl_vol_dateEnd.Text = vol.dateEnd.ToString();
-            lbl_vol_from.Text = getDestinationById(vol.id_destination_from).city;
-            lbl_vol_to.Text = getDestinationById(vol.id_destination_to).city;
+            DestinationWS destination = getDestinationById(vol.id_destination_from);
+            lbl_vol_from.Text = destination.city + ", " + destination.country;
+            destination = getDestinationById(vol.id_destination_to);
+            lbl_vol_to.Text = destination.city + ", " + destination.country;
             lbl_vol_price.Text = vol.price.ToString();
         }
 
@@ -249,12 +267,9 @@ namespace IHM_Reservation
 
         private DestinationWS getDestinationById(int idDestination)
         {
-            foreach (DestinationWS dest in this.destinations)
+            if (this.destinations.ContainsKey(idDestination))
             {
-                if (dest.id == idDestination)
-                {
-                    return dest;
-                }
+                return this.destinations[idDestination];
             }
             return new DestinationWS();
         }

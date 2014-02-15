@@ -137,9 +137,11 @@ namespace IHM_Reservation.WebServiceConsultation {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string categoryField;
         
-        private System.DateTime dateStartField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dateStartField;
         
-        private System.DateTime dateEndField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dateEndField;
         
         private int id_destination_fromField;
         
@@ -207,26 +209,26 @@ namespace IHM_Reservation.WebServiceConsultation {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime dateStart {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string dateStart {
             get {
                 return this.dateStartField;
             }
             set {
-                if ((this.dateStartField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.dateStartField, value) != true)) {
                     this.dateStartField = value;
                     this.RaisePropertyChanged("dateStart");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime dateEnd {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string dateEnd {
             get {
                 return this.dateEndField;
             }
             set {
-                if ((this.dateEndField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.dateEndField, value) != true)) {
                     this.dateEndField = value;
                     this.RaisePropertyChanged("dateEnd");
                 }

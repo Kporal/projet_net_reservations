@@ -57,8 +57,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
           <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="dateStart" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="dateEnd" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="dateStart" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dateEnd" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="id_destination_from" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="id_destination_to" type="s:int" />
         </s:sequence>

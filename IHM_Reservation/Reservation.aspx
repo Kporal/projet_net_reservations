@@ -117,7 +117,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Prix :</label>
-                                    <asp:Label ID="lbl_vol_price" runat="server" Text="Label"></asp:Label>
+                                    <asp:Label ID="lbl_vol_price" runat="server" Text="Label"></asp:Label> 
+                                    €
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -245,6 +246,7 @@
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientPays" Display="dynamic" ErrorMessage="Veuillez saisir le pays de résidence du client" />
                     <asp:CompareValidator runat="server" ControlToValidate="txt_clientPays" Type="String" Operator="DataTypeCheck"
                         ErrorMessage="Veuillez saisir le pays de résidence du client" Display="Dynamic" />
+
                 </asp:Panel>
             </form>
         </div>
