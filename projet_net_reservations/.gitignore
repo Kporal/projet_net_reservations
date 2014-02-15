@@ -1,6 +1,0 @@
-*.cache
-Debug
-*.dll
-/IHM_Reservation/bin/*.pdb
-/*.suo
-/ReservationServices/bin
