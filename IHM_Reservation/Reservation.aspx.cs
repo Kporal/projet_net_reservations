@@ -225,7 +225,7 @@ namespace IHM_Reservation
             HotelWS hotelSelected = response.Body.GetHotelByIdResult;
             hotel.Name = hotelSelected.name;
             hotel.Stars = Convert.ToByte(hotelSelected.stars);
-            hotel.Price = Convert.ToDecimal(hotel.Price);
+            hotel.Price = Convert.ToDecimal(hotelSelected.price);
             hotel.City = getDestinationById(hotelSelected.id_destination).city;
             hotel.Country = getDestinationById(hotelSelected.id_destination).country;
             return hotel;
