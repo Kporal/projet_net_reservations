@@ -12,6 +12,8 @@ namespace ProjetNet.Services.MainServices
         {
             System.Diagnostics.Debug.WriteLine("(Info) Lancement des services.");
             GestionReservation resa = new GestionReservation();
+
+            while (true) { }
         }
     }
 }
