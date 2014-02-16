@@ -20,10 +20,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="wsConsultationServerSOAP2.wsdl" MetadataType="Wsdl" ID="cfb466b5-907b-4c34-9afe-fa06d97e53ae" SourceId="1" SourceUrl="http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php?WSDL" />
+    <MetadataFile FileName="wsConsultationServerSOAP2.wsdl" MetadataType="Wsdl" ID="a908d09a-e18e-410f-a146-2e47a0b798cf" SourceId="1" SourceUrl="http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

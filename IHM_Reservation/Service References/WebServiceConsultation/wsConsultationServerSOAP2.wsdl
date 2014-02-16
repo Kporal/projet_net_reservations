@@ -30,6 +30,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="id_destination" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetHotelById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHotelByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHotelByIdResult" type="tns:HotelWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetListVols">
         <s:complexType>
           <s:sequence>
@@ -63,6 +77,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="id_destination_to" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetVolById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVolByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVolByIdResult" type="tns:VolWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetListDestinations">
         <s:complexType />
       </s:element>
@@ -93,11 +121,23 @@
   <wsdl:message name="GetListHotelsSoapOut">
     <wsdl:part name="parameters" element="tns:GetListHotelsResponse" />
   </wsdl:message>
+  <wsdl:message name="GetHotelByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHotelById" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHotelByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="GetListVolsSoapIn">
     <wsdl:part name="parameters" element="tns:GetListVols" />
   </wsdl:message>
   <wsdl:message name="GetListVolsSoapOut">
     <wsdl:part name="parameters" element="tns:GetListVolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVolByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVolById" />
+  </wsdl:message>
+  <wsdl:message name="GetVolByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVolByIdResponse" />
   </wsdl:message>
   <wsdl:message name="GetListDestinationsSoapIn">
     <wsdl:part name="parameters" element="tns:GetListDestinations" />
@@ -110,9 +150,17 @@
       <wsdl:input message="tns:GetListHotelsSoapIn" />
       <wsdl:output message="tns:GetListHotelsSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetHotelById">
+      <wsdl:input message="tns:GetHotelByIdSoapIn" />
+      <wsdl:output message="tns:GetHotelByIdSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetListVols">
       <wsdl:input message="tns:GetListVolsSoapIn" />
       <wsdl:output message="tns:GetListVolsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVolById">
+      <wsdl:input message="tns:GetVolByIdSoapIn" />
+      <wsdl:output message="tns:GetVolByIdSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetListDestinations">
       <wsdl:input message="tns:GetListDestinationsSoapIn" />
@@ -130,8 +178,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetHotelById">
+      <soap:operation soapAction="http://tempuri.org/GetHotelById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetListVols">
       <soap:operation soapAction="http://tempuri.org/GetListVols" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVolById">
+      <soap:operation soapAction="http://tempuri.org/GetVolById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -160,8 +226,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetHotelById">
+      <soap12:operation soapAction="http://tempuri.org/GetHotelById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetListVols">
       <soap12:operation soapAction="http://tempuri.org/GetListVols" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVolById">
+      <soap12:operation soapAction="http://tempuri.org/GetVolById" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -181,10 +265,10 @@
   </wsdl:binding>
   <wsdl:service name="Service1">
     <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
-      <soap:address location="http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php" />
+      <soap:address location="http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php" />
     </wsdl:port>
     <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
-      <soap12:address location="http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php" />
+      <soap12:address location="http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

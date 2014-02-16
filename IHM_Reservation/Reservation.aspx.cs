@@ -80,6 +80,7 @@ namespace IHM_Reservation
 
             try
             {
+                /*
                 Hotel hoteltest = new Hotel();
                 hoteltest.Name = "HotelTest";
                 hoteltest.Stars = 5;
@@ -93,15 +94,16 @@ namespace IHM_Reservation
                 voltest.From = "Nantes";
                 voltest.To = "Paris";
                 voltest.Category = "Eco";
+                */
 
                 // Envois du message.
                 msgQ.Send(new ReservationHotelVol()
                     {
                         Client = getClientSelected(),
-                        //Hotel = getHotelSelected(),
-                        //Vol = getVolSelected(),
-                        Hotel = hoteltest,
-                        Vol = voltest,
+                        Hotel = getHotelSelected(),
+                        Vol = getVolSelected(),
+                        //Hotel = hoteltest,
+                        //Vol = voltest,
                         DateEnd = this.cal_dateEnd.SelectedDate,
                         DateStart = this.cal_dateStart.SelectedDate
                     }, "Message de reservation");
@@ -216,7 +218,13 @@ namespace IHM_Reservation
         {
             // info de l'hotel
             Hotel hotel = new Hotel();
-            HotelWS hotelSelected = getHotelById(Convert.ToInt32(dpdl_hotelDispo.SelectedValue));
+
+            // appel du ws
+            GetHotelByIdRequestBody requestBody = new GetHotelByIdRequestBody(Convert.ToInt32(dpdl_hotelDispo.SelectedValue));
+            GetHotelByIdResponse response = soap.GetHotelById(new GetHotelByIdRequest(requestBody));
+            HotelWS hotelSelected = response.Body.GetHotelByIdResult;
+
+            // HotelWS hotelSelected = getHotelById(Convert.ToInt32(dpdl_hotelDispo.SelectedValue));
             hotel.Name = hotelSelected.name;
             hotel.Stars = Convert.ToByte(hotelSelected.stars);
             hotel.Price = hotel.Price;
@@ -229,7 +237,13 @@ namespace IHM_Reservation
         {
             // info du vol
             Vol vol = new Vol();
-            VolWS volSelected = getVolById(Convert.ToInt32(dpdl_volDispo.SelectedValue));
+
+            // appel du ws
+            GetVolByIdRequestBody requestBody = new GetVolByIdRequestBody(Convert.ToInt32(dpdl_volDispo.SelectedValue));
+            GetVolByIdResponse response = soap.GetVolById(new GetVolByIdRequest(requestBody));
+            VolWS volSelected = response.Body.GetVolByIdResult;
+
+            // VolWS volSelected = getVolById(Convert.ToInt32(dpdl_volDispo.SelectedValue));
             vol.Name = volSelected.name;
             vol.Price = Convert.ToDecimal(volSelected.price);
             vol.Category = volSelected.category;
