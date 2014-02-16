@@ -9,6 +9,7 @@ namespace ProjetNet.Modele.ModeleReservation
     /// <summary>
     /// Reservation d'un hotel et d'un vol.
     /// </summary>
+    [Serializable]
     public class ReservationHotelVol
     {
         /// <summary>

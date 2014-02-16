@@ -1,0 +1,452 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ModeleReservation.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient">
+            <summary>Type shim de ProjetNet.Modele.ModeleReservation.Client</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.#ctor">
+            <summary>Initialise une nouvelle instance de shim</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.#ctor(ProjetNet.Modele.ModeleReservation.Client)">
+            <summary>Initialise un nouveau shim pour l&apos;instance donnée</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.BehaveAsCurrent">
+            <summary>Attribue le comportement &apos;Current&apos; à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.BehaveAsNotImplemented">
+            <summary>Attribue le comportement &apos;NotImplemented&apos; à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AddressGet">
+            <summary>Définit le shim de Client.get_Address()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AddressSetString">
+            <summary>Définit le shim de Client.set_Address(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.Behavior">
+            <summary>Attribue le comportement à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.CityGet">
+            <summary>Définit le shim de Client.get_City()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.CitySetString">
+            <summary>Définit le shim de Client.set_City(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.Constructor">
+            <summary>Définit le shim de Client.Client()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.CountryGet">
+            <summary>Définit le shim de Client.get_Country()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.CountrySetString">
+            <summary>Définit le shim de Client.set_Country(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.FirstNameGet">
+            <summary>Définit le shim de Client.get_FirstName()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.FirstNameSetString">
+            <summary>Définit le shim de Client.set_FirstName(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.LastNameGet">
+            <summary>Définit le shim de Client.get_LastName()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.LastNameSetString">
+            <summary>Définit le shim de Client.set_LastName(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.MailGet">
+            <summary>Définit le shim de Client.get_Mail()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.MailSetString">
+            <summary>Définit le shim de Client.set_Mail(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.PhoneGet">
+            <summary>Définit le shim de Client.get_Phone()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.PhoneSetString">
+            <summary>Définit le shim de Client.set_Phone(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.PostalCodeGet">
+            <summary>Définit le shim de Client.get_PostalCode()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.PostalCodeSetString">
+            <summary>Définit le shim de Client.set_PostalCode(String value)</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances">
+            <summary>Définir des shims pour tous les membres des instances</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.AddressGet">
+            <summary>Définit le shim de Client.get_Address()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.AddressSetString">
+            <summary>Définit le shim de Client.set_Address(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.CityGet">
+            <summary>Définit le shim de Client.get_City()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.CitySetString">
+            <summary>Définit le shim de Client.set_City(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.CountryGet">
+            <summary>Définit le shim de Client.get_Country()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.CountrySetString">
+            <summary>Définit le shim de Client.set_Country(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.FirstNameGet">
+            <summary>Définit le shim de Client.get_FirstName()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.FirstNameSetString">
+            <summary>Définit le shim de Client.set_FirstName(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.LastNameGet">
+            <summary>Définit le shim de Client.get_LastName()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.LastNameSetString">
+            <summary>Définit le shim de Client.set_LastName(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.MailGet">
+            <summary>Définit le shim de Client.get_Mail()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.MailSetString">
+            <summary>Définit le shim de Client.set_Mail(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.PhoneGet">
+            <summary>Définit le shim de Client.get_Phone()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.PhoneSetString">
+            <summary>Définit le shim de Client.set_Phone(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.PostalCodeGet">
+            <summary>Définit le shim de Client.get_PostalCode()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimClient.AllInstances.PostalCodeSetString">
+            <summary>Définit le shim de Client.set_PostalCode(String value)</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel">
+            <summary>Type shim de ProjetNet.Modele.ModeleReservation.Hotel</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.#ctor">
+            <summary>Initialise une nouvelle instance de shim</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.#ctor(ProjetNet.Modele.ModeleReservation.Hotel)">
+            <summary>Initialise un nouveau shim pour l&apos;instance donnée</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.BehaveAsCurrent">
+            <summary>Attribue le comportement &apos;Current&apos; à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.BehaveAsNotImplemented">
+            <summary>Attribue le comportement &apos;NotImplemented&apos; à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.Behavior">
+            <summary>Attribue le comportement à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.CityGet">
+            <summary>Définit le shim de Hotel.get_City()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.CitySetString">
+            <summary>Définit le shim de Hotel.set_City(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.Constructor">
+            <summary>Définit le shim de Hotel.Hotel()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.CountryGet">
+            <summary>Définit le shim de Hotel.get_Country()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.CountrySetString">
+            <summary>Définit le shim de Hotel.set_Country(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.NameGet">
+            <summary>Définit le shim de Hotel.get_Name()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.NameSetString">
+            <summary>Définit le shim de Hotel.set_Name(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.PriceGet">
+            <summary>Définit le shim de Hotel.get_Price()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.PriceSetDecimal">
+            <summary>Définit le shim de Hotel.set_Price(Decimal value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.StarsGet">
+            <summary>Définit le shim de Hotel.get_Stars()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.StarsSetByte">
+            <summary>Définit le shim de Hotel.set_Stars(Byte value)</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances">
+            <summary>Définir des shims pour tous les membres des instances</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances.CityGet">
+            <summary>Définit le shim de Hotel.get_City()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances.CitySetString">
+            <summary>Définit le shim de Hotel.set_City(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances.CountryGet">
+            <summary>Définit le shim de Hotel.get_Country()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances.CountrySetString">
+            <summary>Définit le shim de Hotel.set_Country(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances.NameGet">
+            <summary>Définit le shim de Hotel.get_Name()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances.NameSetString">
+            <summary>Définit le shim de Hotel.set_Name(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances.PriceGet">
+            <summary>Définit le shim de Hotel.get_Price()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances.PriceSetDecimal">
+            <summary>Définit le shim de Hotel.set_Price(Decimal value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances.StarsGet">
+            <summary>Définit le shim de Hotel.get_Stars()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimHotel.AllInstances.StarsSetByte">
+            <summary>Définit le shim de Hotel.set_Stars(Byte value)</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol">
+            <summary>Type shim de ProjetNet.Modele.ModeleReservation.ReservationHotelVol</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.#ctor">
+            <summary>Initialise une nouvelle instance de shim</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.#ctor(ProjetNet.Modele.ModeleReservation.ReservationHotelVol)">
+            <summary>Initialise un nouveau shim pour l&apos;instance donnée</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.BehaveAsCurrent">
+            <summary>Attribue le comportement &apos;Current&apos; à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.BehaveAsNotImplemented">
+            <summary>Attribue le comportement &apos;NotImplemented&apos; à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.Behavior">
+            <summary>Attribue le comportement à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.ClientGet">
+            <summary>Définit le shim de ReservationHotelVol.get_Client()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.ClientSetClient">
+            <summary>Définit le shim de ReservationHotelVol.set_Client(Client value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.Constructor">
+            <summary>Définit le shim de ReservationHotelVol.ReservationHotelVol()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.DateEndGet">
+            <summary>Définit le shim de ReservationHotelVol.get_DateEnd()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.DateEndSetDateTime">
+            <summary>Définit le shim de ReservationHotelVol.set_DateEnd(DateTime value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.DateStartGet">
+            <summary>Définit le shim de ReservationHotelVol.get_DateStart()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.DateStartSetDateTime">
+            <summary>Définit le shim de ReservationHotelVol.set_DateStart(DateTime value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.HotelGet">
+            <summary>Définit le shim de ReservationHotelVol.get_Hotel()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.HotelSetHotel">
+            <summary>Définit le shim de ReservationHotelVol.set_Hotel(Hotel value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.VolGet">
+            <summary>Définit le shim de ReservationHotelVol.get_Vol()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.VolSetVol">
+            <summary>Définit le shim de ReservationHotelVol.set_Vol(Vol value)</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances">
+            <summary>Définir des shims pour tous les membres des instances</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances.ClientGet">
+            <summary>Définit le shim de ReservationHotelVol.get_Client()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances.ClientSetClient">
+            <summary>Définit le shim de ReservationHotelVol.set_Client(Client value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances.DateEndGet">
+            <summary>Définit le shim de ReservationHotelVol.get_DateEnd()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances.DateEndSetDateTime">
+            <summary>Définit le shim de ReservationHotelVol.set_DateEnd(DateTime value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances.DateStartGet">
+            <summary>Définit le shim de ReservationHotelVol.get_DateStart()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances.DateStartSetDateTime">
+            <summary>Définit le shim de ReservationHotelVol.set_DateStart(DateTime value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances.HotelGet">
+            <summary>Définit le shim de ReservationHotelVol.get_Hotel()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances.HotelSetHotel">
+            <summary>Définit le shim de ReservationHotelVol.set_Hotel(Hotel value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances.VolGet">
+            <summary>Définit le shim de ReservationHotelVol.get_Vol()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimReservationHotelVol.AllInstances.VolSetVol">
+            <summary>Définit le shim de ReservationHotelVol.set_Vol(Vol value)</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol">
+            <summary>Type shim de ProjetNet.Modele.ModeleReservation.Vol</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.#ctor">
+            <summary>Initialise une nouvelle instance de shim</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.#ctor(ProjetNet.Modele.ModeleReservation.Vol)">
+            <summary>Initialise un nouveau shim pour l&apos;instance donnée</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.BehaveAsCurrent">
+            <summary>Attribue le comportement &apos;Current&apos; à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.BehaveAsNotImplemented">
+            <summary>Attribue le comportement &apos;NotImplemented&apos; à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.Behavior">
+            <summary>Attribue le comportement à toutes les méthodes du type ayant fait l&apos;objet d&apos;un shim</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.CategoryGet">
+            <summary>Définit le shim de Vol.get_Category()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.CategorySetString">
+            <summary>Définit le shim de Vol.set_Category(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.Constructor">
+            <summary>Définit le shim de Vol.Vol()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.FromGet">
+            <summary>Définit le shim de Vol.get_From()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.FromSetString">
+            <summary>Définit le shim de Vol.set_From(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.NameGet">
+            <summary>Définit le shim de Vol.get_Name()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.NameSetString">
+            <summary>Définit le shim de Vol.set_Name(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.PriceGet">
+            <summary>Définit le shim de Vol.get_Price()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.PriceSetDecimal">
+            <summary>Définit le shim de Vol.set_Price(Decimal value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.ToGet">
+            <summary>Définit le shim de Vol.get_To()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.ToSetString">
+            <summary>Définit le shim de Vol.set_To(String value)</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances">
+            <summary>Définir des shims pour tous les membres des instances</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances.CategoryGet">
+            <summary>Définit le shim de Vol.get_Category()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances.CategorySetString">
+            <summary>Définit le shim de Vol.set_Category(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances.FromGet">
+            <summary>Définit le shim de Vol.get_From()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances.FromSetString">
+            <summary>Définit le shim de Vol.set_From(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances.NameGet">
+            <summary>Définit le shim de Vol.get_Name()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances.NameSetString">
+            <summary>Définit le shim de Vol.set_Name(String value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances.PriceGet">
+            <summary>Définit le shim de Vol.get_Price()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances.PriceSetDecimal">
+            <summary>Définit le shim de Vol.set_Price(Decimal value)</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances.ToGet">
+            <summary>Définit le shim de Vol.get_To()</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.ShimVol.AllInstances.ToSetString">
+            <summary>Définit le shim de Vol.set_To(String value)</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.StubClient">
+            <summary>Type stub de ProjetNet.Modele.ModeleReservation.Client</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.StubClient.#ctor">
+            <summary>Initialise une nouvelle instance</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.StubClient.InitializeStub">
+            <summary>Initialise une nouvelle instance de type StubClient</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubClient.CallBase">
+            <summary>Obtient ou définit une valeur qui indique si la méthode de base doit être appelée à la place du comportement de secours</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubClient.InstanceBehavior">
+            <summary>Obtient ou définit le comportement de l&apos;instance.</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubClient.InstanceObserver">
+            <summary>Obtient ou définit l&apos;observateur d&apos;instance.</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.StubHotel">
+            <summary>Type stub de ProjetNet.Modele.ModeleReservation.Hotel</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.StubHotel.#ctor">
+            <summary>Initialise une nouvelle instance</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.StubHotel.InitializeStub">
+            <summary>Initialise une nouvelle instance de type StubHotel</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubHotel.CallBase">
+            <summary>Obtient ou définit une valeur qui indique si la méthode de base doit être appelée à la place du comportement de secours</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubHotel.InstanceBehavior">
+            <summary>Obtient ou définit le comportement de l&apos;instance.</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubHotel.InstanceObserver">
+            <summary>Obtient ou définit l&apos;observateur d&apos;instance.</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.StubReservationHotelVol">
+            <summary>Type stub de ProjetNet.Modele.ModeleReservation.ReservationHotelVol</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.StubReservationHotelVol.#ctor">
+            <summary>Initialise une nouvelle instance</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.StubReservationHotelVol.InitializeStub">
+            <summary>Initialise une nouvelle instance de type StubReservationHotelVol</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubReservationHotelVol.CallBase">
+            <summary>Obtient ou définit une valeur qui indique si la méthode de base doit être appelée à la place du comportement de secours</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubReservationHotelVol.InstanceBehavior">
+            <summary>Obtient ou définit le comportement de l&apos;instance.</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubReservationHotelVol.InstanceObserver">
+            <summary>Obtient ou définit l&apos;observateur d&apos;instance.</summary>
+        </member>
+        <member name="T:ProjetNet.Modele.ModeleReservation.Fakes.StubVol">
+            <summary>Type stub de ProjetNet.Modele.ModeleReservation.Vol</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.StubVol.#ctor">
+            <summary>Initialise une nouvelle instance</summary>
+        </member>
+        <member name="M:ProjetNet.Modele.ModeleReservation.Fakes.StubVol.InitializeStub">
+            <summary>Initialise une nouvelle instance de type StubVol</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubVol.CallBase">
+            <summary>Obtient ou définit une valeur qui indique si la méthode de base doit être appelée à la place du comportement de secours</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubVol.InstanceBehavior">
+            <summary>Obtient ou définit le comportement de l&apos;instance.</summary>
+        </member>
+        <member name="P:ProjetNet.Modele.ModeleReservation.Fakes.StubVol.InstanceObserver">
+            <summary>Obtient ou définit l&apos;observateur d&apos;instance.</summary>
+        </member>
+    </members>
+</doc>

@@ -80,12 +80,28 @@ namespace IHM_Reservation
 
             try
             {
+                Hotel hoteltest = new Hotel();
+                hoteltest.Name = "HotelTest";
+                hoteltest.Stars = 5;
+                hoteltest.Price = (decimal) 324.43;
+                hoteltest.City = "Paris";
+                hoteltest.Country = "France";
+
+                Vol voltest = new Vol();
+                voltest.Name = "voltest";
+                voltest.Price = (decimal)324.43;
+                voltest.From = "Nantes";
+                voltest.To = "Paris";
+                voltest.Category = "Eco";
+
                 // Envois du message.
                 msgQ.Send(new ReservationHotelVol()
                     {
                         Client = getClientSelected(),
-                        Hotel = getHotelSelected(),
-                        Vol = getVolSelected(),
+                        //Hotel = getHotelSelected(),
+                        //Vol = getVolSelected(),
+                        Hotel = hoteltest,
+                        Vol = voltest,
                         DateEnd = this.cal_dateEnd.SelectedDate,
                         DateStart = this.cal_dateStart.SelectedDate
                     }, "Message de reservation");

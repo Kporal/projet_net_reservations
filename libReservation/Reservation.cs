@@ -13,7 +13,7 @@ namespace ProjetNet.BusinessL.libReservation
         {
         }
 
-        [AutoComplete ]
+        [AutoComplete]
         public void DoReservation(ReservationHotelVol reservation)  
         {
             ReservationHotels resaHotel = new ReservationHotels();

@@ -9,6 +9,7 @@ namespace ProjetNet.Modele.ModeleReservation
     /// <summary>
     /// Client effectuant la reservation.
     /// </summary>
+    [Serializable]
     public class Client
     {
         /// <summary>

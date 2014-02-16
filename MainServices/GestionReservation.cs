@@ -27,11 +27,10 @@ namespace ProjetNet.Services.MainServices
             myQueue.Formatter = new XmlMessageFormatter(new Type[] { typeof(ProjetNet.Modele.ModeleReservation.ReservationHotelVol) });
 
             // Ajoute l'evenement de reception d'un message.
-            myQueue.PeekCompleted += new
-                PeekCompletedEventHandler(MyPeekCompleted);
+            myQueue.ReceiveCompleted += new ReceiveCompletedEventHandler(MyPeekCompleted);
 
             // Lance l'attente asynchrone d'un message.
-            myQueue.BeginPeek();
+            myQueue.BeginReceive();
         }
 
         /// <summary>
@@ -40,7 +39,7 @@ namespace ProjetNet.Services.MainServices
         /// <param name="source">Queue</param>
         /// <param name="asyncResult">Message</param>
         private void MyPeekCompleted(Object source, 
-			PeekCompletedEventArgs asyncResult)
+			ReceiveCompletedEventArgs asyncResult)
 		{
 			// Récupère la queue.
 			MessageQueue mq = (MessageQueue)source;
@@ -86,8 +85,6 @@ namespace ProjetNet.Services.MainServices
                 serviceReservationSOAP.Reserver(reserverRequest);
                 
                 System.Diagnostics.Debug.Write("(Info) Reservation reussie.");
-                // Efface le message.
-                mq.Receive();
             }
             catch(Exception e)
             {
@@ -97,7 +94,7 @@ namespace ProjetNet.Services.MainServices
             finally
             {
                 // Relance l'attente d'un message.
-                mq.BeginPeek();
+                mq.BeginReceive();
             }
 		}
     }
