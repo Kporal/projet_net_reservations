@@ -80,30 +80,12 @@ namespace IHM_Reservation
 
             try
             {
-                /*
-                Hotel hoteltest = new Hotel();
-                hoteltest.Name = "HotelTest";
-                hoteltest.Stars = 5;
-                hoteltest.Price = (decimal) 324.43;
-                hoteltest.City = "Paris";
-                hoteltest.Country = "France";
-
-                Vol voltest = new Vol();
-                voltest.Name = "voltest";
-                voltest.Price = (decimal)324.43;
-                voltest.From = "Nantes";
-                voltest.To = "Paris";
-                voltest.Category = "Eco";
-                */
-
                 // Envois du message.
                 msgQ.Send(new ReservationHotelVol()
                     {
                         Client = getClientSelected(),
                         Hotel = getHotelSelected(),
                         Vol = getVolSelected(),
-                        //Hotel = hoteltest,
-                        //Vol = voltest,
                         DateEnd = this.cal_dateEnd.SelectedDate,
                         DateStart = this.cal_dateStart.SelectedDate
                     }, "Message de reservation");
@@ -160,6 +142,15 @@ namespace IHM_Reservation
                 // reponse du WS
                 this.vols = volResponse.Body.GetListVolsResult;
 
+                if (this.vols.Count.Equals(0))
+                {
+                    btn_valider_voyage.Enabled = false;
+                    panelReservation.Visible = false;
+                    lbl_erreurWS.Text = "Aucun vols disponibles pour votre recherche. " +
+                    "Veuillez réessayer plus tard...";
+                    lbl_erreurWS.Visible = true;
+                }
+
                 // reset de la liste des vols
                 dpdl_volDispo.Items.Clear();
                 // insertion des vols dans la liste
@@ -195,6 +186,15 @@ namespace IHM_Reservation
                 // reponse du WS
                 this.hotels = hotelResponse.Body.GetListHotelsResult;
 
+                if (this.hotels.Count.Equals(0))
+                {
+                    btn_valider_voyage.Enabled = false;
+                    panelReservation.Visible = false;
+                    lbl_erreurWS.Text = "Aucun hotels disponibles pour votre recherche. " +
+                    "Veuillez réessayer plus tard...";
+                    lbl_erreurWS.Visible = true;
+                }
+
                 // reset de la liste des hotels
                 dpdl_hotelDispo.Items.Clear();
                 // insertion des hotels dans la liste
@@ -223,11 +223,9 @@ namespace IHM_Reservation
             GetHotelByIdRequestBody requestBody = new GetHotelByIdRequestBody(Convert.ToInt32(dpdl_hotelDispo.SelectedValue));
             GetHotelByIdResponse response = soap.GetHotelById(new GetHotelByIdRequest(requestBody));
             HotelWS hotelSelected = response.Body.GetHotelByIdResult;
-
-            // HotelWS hotelSelected = getHotelById(Convert.ToInt32(dpdl_hotelDispo.SelectedValue));
             hotel.Name = hotelSelected.name;
             hotel.Stars = Convert.ToByte(hotelSelected.stars);
-            hotel.Price = hotel.Price;
+            hotel.Price = Convert.ToDecimal(hotel.Price);
             hotel.City = getDestinationById(hotelSelected.id_destination).city;
             hotel.Country = getDestinationById(hotelSelected.id_destination).country;
             return hotel;
@@ -242,8 +240,6 @@ namespace IHM_Reservation
             GetVolByIdRequestBody requestBody = new GetVolByIdRequestBody(Convert.ToInt32(dpdl_volDispo.SelectedValue));
             GetVolByIdResponse response = soap.GetVolById(new GetVolByIdRequest(requestBody));
             VolWS volSelected = response.Body.GetVolByIdResult;
-
-            // VolWS volSelected = getVolById(Convert.ToInt32(dpdl_volDispo.SelectedValue));
             vol.Name = volSelected.name;
             vol.Price = Convert.ToDecimal(volSelected.price);
             vol.Category = volSelected.category;
