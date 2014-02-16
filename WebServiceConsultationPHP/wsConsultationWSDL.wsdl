@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions 
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" 
+  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+  xmlns:tns="http://tempuri.org/" 
+  xmlns:s="http://www.w3.org/2001/XMLSchema" 
+  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+  targetNamespace="http://tempuri.org/" 
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetListHotels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListHotelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListHotelsResult" type="tns:ArrayOfHotelWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHotelWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HotelWS" nillable="true" type="tns:HotelWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HotelWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stars" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_destination" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetHotelById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHotelByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHotelByIdResult" type="tns:HotelWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListVols">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFrom" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateStart" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListVolsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListVolsResult" type="tns:ArrayOfVolWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVolWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VolWS" nillable="true" type="tns:VolWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VolWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dateStart" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dateEnd" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_destination_from" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_destination_to" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVolById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVolByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVolByIdResult" type="tns:VolWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListDestinations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListDestinationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListDestinationsResult" type="tns:ArrayOfDestinationWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDestinationWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DestinationWS" nillable="true" type="tns:DestinationWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DestinationWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetListHotelsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListHotels" />
+  </wsdl:message>
+  <wsdl:message name="GetListHotelsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListHotelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHotelById" />
+  </wsdl:message>
+  <wsdl:message name="GetHotelByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHotelByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListVolsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListVols" />
+  </wsdl:message>
+  <wsdl:message name="GetListVolsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListVolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVolByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVolById" />
+  </wsdl:message>
+  <wsdl:message name="GetVolByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVolByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListDestinationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListDestinations" />
+  </wsdl:message>
+  <wsdl:message name="GetListDestinationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListDestinationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="GetListHotels">
+      <wsdl:input message="tns:GetListHotelsSoapIn" />
+      <wsdl:output message="tns:GetListHotelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelById">
+      <wsdl:input message="tns:GetHotelByIdSoapIn" />
+      <wsdl:output message="tns:GetHotelByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListVols">
+      <wsdl:input message="tns:GetListVolsSoapIn" />
+      <wsdl:output message="tns:GetListVolsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVolById">
+      <wsdl:input message="tns:GetVolByIdSoapIn" />
+      <wsdl:output message="tns:GetVolByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListDestinations">
+      <wsdl:input message="tns:GetListDestinationsSoapIn" />
+      <wsdl:output message="tns:GetListDestinationsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListHotels">
+      <soap:operation soapAction="http://tempuri.org/GetListHotels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelById">
+      <soap:operation soapAction="http://tempuri.org/GetHotelById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListVols">
+      <soap:operation soapAction="http://tempuri.org/GetListVols" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVolById">
+      <soap:operation soapAction="http://tempuri.org/GetVolById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListDestinations">
+      <soap:operation soapAction="http://tempuri.org/GetListDestinations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListHotels">
+      <soap12:operation soapAction="http://tempuri.org/GetListHotels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotelById">
+      <soap12:operation soapAction="http://tempuri.org/GetHotelById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListVols">
+      <soap12:operation soapAction="http://tempuri.org/GetListVols" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVolById">
+      <soap12:operation soapAction="http://tempuri.org/GetVolById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListDestinations">
+      <soap12:operation soapAction="http://tempuri.org/GetListDestinations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://localhost/WSConsultation/wsConsultationServerSOAP.php" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://localhost/WSConsultation/wsConsultationServerSOAP.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

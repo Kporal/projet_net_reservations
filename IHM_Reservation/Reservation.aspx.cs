@@ -24,22 +24,29 @@ namespace IHM_Reservation
         private List<HotelWS> hotels = new List<HotelWS>();
         private List<VolWS> vols = new List<VolWS>();
         private Dictionary<int, DestinationWS> destinations = new Dictionary<int, DestinationWS>();
+        private bool estErreur = false;
 
         public _Default()
         {
             // *****************************
             // GetListDestination
             // *****************************
-
-            // creation de la requete
-            GetListDestinationsRequest destinationRequest = new GetListDestinationsRequest(new GetListDestinationsRequestBody());
-            // appel du WS
-            GetListDestinationsResponse destinationResponse = this.soap.GetListDestinations(destinationRequest);
-
-            // mise en caches des destinations
-            foreach (DestinationWS d in destinationResponse.Body.GetListDestinationsResult)
+            try
             {
-                this.destinations.Add(d.id, d);
+                // creation de la requete
+                GetListDestinationsRequest destinationRequest = new GetListDestinationsRequest(new GetListDestinationsRequestBody());
+                // appel du WS
+                GetListDestinationsResponse destinationResponse = this.soap.GetListDestinations(destinationRequest);
+
+                // mise en caches des destinations
+                foreach (DestinationWS d in destinationResponse.Body.GetListDestinationsResult)
+                {
+                    this.destinations.Add(d.id, d);
+                }
+            }
+            catch (Exception exception)
+            {
+                estErreur = true;
             }
         }
 
@@ -48,9 +55,18 @@ namespace IHM_Reservation
             try
             {
                 // reset du message d'erreur
-                lbl_erreurWS.Visible = false;
-                lbl_erreurWS.Text = "";
+                if (!estErreur)
+                {
+                    lbl_erreurWS.Visible = false;
+                    lbl_erreurWS.Text = "";
 
+                }
+                else
+                {
+                    lbl_erreurWS.Text = "Un problème est survenu. Veuillez réessayer plus tard...";
+                    lbl_erreurWS.Visible = true;
+                }
+                
                 // test si la page est rendu pour la premiere fois
                 if (!IsPostBack)
                 {
@@ -89,6 +105,8 @@ namespace IHM_Reservation
                         DateEnd = this.cal_dateEnd.SelectedDate,
                         DateStart = this.cal_dateStart.SelectedDate
                     }, "Message de reservation");
+                lbl_validation_voyage.Text = "Votre voyage à bien été enregistré !";
+                lbl_validation_voyage.Visible = true;
             }
             catch (Exception exception)
             {
