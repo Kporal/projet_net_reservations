@@ -165,38 +165,37 @@
                     </div>
                     <br />
                     <asp:Button ID="btn_valider_voyage" runat="server" OnClick="btn_valider_voyage_Click" Text="Valider Voyage" Enabled="False" />
-
-                    <!-- --------- -->
-                    <!-- Validator -->
-                    <!-- --------- -->
-
-                    <br />
-                    <!-- NomClient-->
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientName" Display="dynamic" ErrorMessage="Veuillez saisir le nom du client" />
-                    <asp:CompareValidator runat="server" ControlToValidate="txt_clientName" Type="String" Operator="DataTypeCheck"
-                        ErrorMessage="Veuillez saisir le nom du client" Display="Dynamic" />
-                    <br />
-                    <!-- PrenomClient-->
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientFirstname" Display="dynamic" ErrorMessage="Veuillez saisir le prénom du client" />
-                    <asp:CompareValidator runat="server" ControlToValidate="txt_clientFirstname" Type="String" Operator="DataTypeCheck"
-                        ErrorMessage="Veuillez saisir le prénom du client" Display="Dynamic" />
-                    <br />
-                    <!-- CodePostalClient-->
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientPostalCode" Display="dynamic" ErrorMessage="Veuillez saisir un code postal pour le client" />
-                    <asp:RegularExpressionValidator runat="server" ControlToValidate="txt_clientPostalCode" ErrorMessage="Le code postal saisi n'est pas correct" Display="dynamic"
-                        ValidationExpression="([0-9]{5})" />
-                    <br />
-                    <!-- VilleClient-->
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientCity" Display="dynamic" ErrorMessage="Veuillez saisir la ville de résidence du client" />
-                    <asp:CompareValidator runat="server" ControlToValidate="txt_clientCity" Type="String" Operator="DataTypeCheck"
-                        ErrorMessage="Veuillez saisir la ville de résidence du client" Display="Dynamic" />
-                    <br />
-                    <!-- PaysClient-->
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientPays" Display="dynamic" ErrorMessage="Veuillez saisir le pays de résidence du client" />
-                    <asp:CompareValidator runat="server" ControlToValidate="txt_clientPays" Type="String" Operator="DataTypeCheck"
-                        ErrorMessage="Veuillez saisir le pays de résidence du client" Display="Dynamic" />
-
                 </asp:Panel>
+
+                <!-- --------- -->
+                <!-- Validator -->
+                <!-- --------- -->
+
+                <br />
+                <!-- NomClient-->
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientName" Display="dynamic" ErrorMessage="Veuillez saisir le nom du client" />
+                <asp:CompareValidator runat="server" ControlToValidate="txt_clientName" Type="String" Operator="DataTypeCheck"
+                    ErrorMessage="Veuillez saisir le nom du client" Display="Dynamic" />
+                <br />
+                <!-- PrenomClient-->
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientFirstname" Display="dynamic" ErrorMessage="Veuillez saisir le prénom du client" />
+                <asp:CompareValidator runat="server" ControlToValidate="txt_clientFirstname" Type="String" Operator="DataTypeCheck"
+                    ErrorMessage="Veuillez saisir le prénom du client" Display="Dynamic" />
+                <br />
+                <!-- CodePostalClient-->
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientPostalCode" Display="dynamic" ErrorMessage="Veuillez saisir un code postal pour le client" />
+                <asp:RegularExpressionValidator runat="server" ControlToValidate="txt_clientPostalCode" ErrorMessage="Le code postal saisi n'est pas correct" Display="dynamic"
+                    ValidationExpression="([0-9]{5})" />
+                <br />
+                <!-- VilleClient-->
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientCity" Display="dynamic" ErrorMessage="Veuillez saisir la ville de résidence du client" />
+                <asp:CompareValidator runat="server" ControlToValidate="txt_clientCity" Type="String" Operator="DataTypeCheck"
+                    ErrorMessage="Veuillez saisir la ville de résidence du client" Display="Dynamic" />
+                <br />
+                <!-- PaysClient-->
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_clientPays" Display="dynamic" ErrorMessage="Veuillez saisir le pays de résidence du client" />
+                <asp:CompareValidator runat="server" ControlToValidate="txt_clientPays" Type="String" Operator="DataTypeCheck"
+                    ErrorMessage="Veuillez saisir le pays de résidence du client" Display="Dynamic" />
             </form>
         </div>
     </div>
