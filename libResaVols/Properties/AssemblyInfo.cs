@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.EnterpriseServices;
 
 // Les informations générales relatives à un assembly dépendent de 
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
@@ -18,6 +19,8 @@ using System.Runtime.InteropServices;
 // aux composants COM.  Si vous devez accéder à un type dans cet assembly à partir de 
 // COM, affectez la valeur true à l'attribut ComVisible sur ce type.
 [assembly: ComVisible(true)]
+[assembly: ApplicationActivation(ActivationOption.Server)]
+[assembly: ApplicationName("LibResaVol")]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
 [assembly: Guid("40f0ab20-16a8-4bed-bc47-c852e8c758bf")]
