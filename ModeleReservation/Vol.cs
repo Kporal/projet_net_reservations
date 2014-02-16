@@ -12,6 +12,8 @@ namespace ProjetNet.Modele.ModeleReservation
     [Serializable]
     public class Vol
     {
+        public Vol() { }
+
         /// <summary>
         /// Nom du vol.
         /// </summary>

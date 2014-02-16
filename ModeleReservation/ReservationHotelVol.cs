@@ -12,6 +12,8 @@ namespace ProjetNet.Modele.ModeleReservation
     [Serializable]
     public class ReservationHotelVol
     {
+        public ReservationHotelVol() { }
+
         /// <summary>
         /// Client de la reservation.
         /// </summary>
