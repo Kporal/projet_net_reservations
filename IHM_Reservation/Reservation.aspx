@@ -163,6 +163,7 @@
                             </div>
                         </div>
                     </div>
+                    <asp:Label ID="lbl_validation_voyage" runat="server" ForeColor="#00CC00" Text="Label" Visible="False"></asp:Label>
                     <br />
                     <asp:Button ID="btn_valider_voyage" runat="server" OnClick="btn_valider_voyage_Click" Text="Valider Voyage" Enabled="False" />
                 </asp:Panel>

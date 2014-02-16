@@ -89,6 +89,8 @@ namespace IHM_Reservation
                         DateEnd = this.cal_dateEnd.SelectedDate,
                         DateStart = this.cal_dateStart.SelectedDate
                     }, "Message de reservation");
+                lbl_validation_voyage.Text = "Votre voyage à bien été enregistré !";
+                lbl_validation_voyage.Visible = true;
             }
             catch (Exception exception)
             {
