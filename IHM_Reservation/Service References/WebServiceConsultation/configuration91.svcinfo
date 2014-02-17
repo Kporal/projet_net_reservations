@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Syaj6C9MZxxqI/EjNG1DfpqVijo=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="cHEqUXVxiLQN3NnxOcsGtWMf7IE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="Service1Soap">
       <properties>
@@ -263,10 +263,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="Service1Soap" contract="WebServiceConsultation.Service1Soap" bindingType="basicHttpBinding" address="http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php" bindingConfiguration="Service1Soap">
+    <endpoint name="Service1Soap" contract="WebServiceConsultation.Service1Soap" bindingType="basicHttpBinding" address="http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php" bindingConfiguration="Service1Soap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php</serializedValue>
+          <serializedValue>http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -348,10 +348,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="Service1Soap12" contract="WebServiceConsultation.Service1Soap" bindingType="customBinding" address="http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php" bindingConfiguration="Service1Soap12">
+    <endpoint name="Service1Soap12" contract="WebServiceConsultation.Service1Soap" bindingType="customBinding" address="http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php" bindingConfiguration="Service1Soap12">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php</serializedValue>
+          <serializedValue>http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

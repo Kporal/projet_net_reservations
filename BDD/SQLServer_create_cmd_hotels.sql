@@ -8,22 +8,21 @@ USE [cmd_hotels]
 GO
 CREATE TABLE [dbo].[cmd_hotels](
 	[idcmd_hotels] [int] IDENTITY(1, 1) NOT NULL,
-	[client_firstname] [varchar](50) NOT NULL,
-	[client_lastname] [varchar](50) NOT NULL,
-	[client_phone] [varchar](20) NOT NULL,
-	[client_mail] [varchar] (50) NOT NULL,
-	[client_address] [varchar](50) NOT NULL,
-	[client_postal_code] [varchar](50) NOT NULL,
-	[client_city] [varchar](50) NOT NULL,
-	[client_country] [varchar](50) NOT NULL,
-	[hotel_name] [varchar](50) NOT NULL,
-	[hotel_stars] [tinyint] NOT NULL,
-	[hotel_address] [varchar](50) NOT NULL,
-	[hotel_city] [varchar](50) NOT NULL,
-	[hotel_country] [varchar](50) NOT NULL,
-	[hotel_price] [money] NOT NULL,
-	[hotel_dateStart] [datetime] NOT NULL,
-	[hotel_dateEnd] [datetime] NOT NULL
+	[client_firstname] [varchar](50),
+	[client_lastname] [varchar](50),
+	[client_phone] [varchar](20),
+	[client_mail] [varchar] (50),
+	[client_address] [varchar](50),
+	[client_postal_code] [varchar](50),
+	[client_city] [varchar](50),
+	[client_country] [varchar](50),
+	[hotel_name] [varchar](50),
+	[hotel_stars] [tinyint],
+	[hotel_city] [varchar](50),
+	[hotel_country] [varchar](50),
+	[hotel_price] [money],
+	[hotel_dateStart] [datetime],
+	[hotel_dateEnd] [datetime]
 ) ON [PRIMARY]
 
 GO

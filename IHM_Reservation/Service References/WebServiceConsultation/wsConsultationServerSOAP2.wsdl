@@ -265,10 +265,10 @@
   </wsdl:binding>
   <wsdl:service name="Service1">
     <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
-      <soap:address location="http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php" />
+      <soap:address location="http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php" />
     </wsdl:port>
     <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
-      <soap12:address location="http://lerelou.dyndns.org:8082/WSConsultation/wsConsultationServerSOAP.php" />
+      <soap12:address location="http://10.143.45.10:8082/WSConsultation/wsConsultationServerSOAP.php" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
