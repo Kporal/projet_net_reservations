@@ -29,6 +29,10 @@ namespace ProjetNet.DataAccessL.libResaHotels
             MyCom.Parameters["@LastName"].Value = reservation.Client.LastName;
             MyCom.Parameters.Add("@Address", SqlDbType.VarChar);
             MyCom.Parameters["@Address"].Value = reservation.Client.Address;
+            MyCom.Parameters.Add("@Phone", SqlDbType.VarChar);
+            MyCom.Parameters["@Phone"].Value = reservation.Client.Phone;
+            MyCom.Parameters.Add("@Mail", SqlDbType.VarChar);
+            MyCom.Parameters["@Mail"].Value = reservation.Client.Mail;
             MyCom.Parameters.Add("@PostalCode", SqlDbType.VarChar);
             MyCom.Parameters["@PostalCode"].Value = reservation.Client.PostalCode;
             MyCom.Parameters.Add("@City", SqlDbType.VarChar);
